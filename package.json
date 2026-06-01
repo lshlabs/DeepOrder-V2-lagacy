@@ -1,0 +1,13 @@
+{
+  "name": "deeporder-v2",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "kds-web"
+  ],
+  "scripts": {
+    "dev:kds": "npm --workspace kds-web run dev",
+    "build:kds": "npm --workspace kds-web run build"
+  }
+}
+
