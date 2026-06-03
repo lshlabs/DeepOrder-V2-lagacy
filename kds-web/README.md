@@ -18,3 +18,9 @@ npm install
 npm run dev
 ```
 
+## Environment
+
+```bash
+VITE_DEEPORDER_API_URL=http://127.0.0.1:8000
+VITE_STORE_ID=STORE_001
+```
