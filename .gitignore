@@ -34,3 +34,7 @@ logs/
 # IDE
 .idea/
 .vscode/
+
+#MCP
+.mcp_screenshot/
+.playwright-cli/

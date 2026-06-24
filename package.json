@@ -3,11 +3,14 @@
   "private": true,
   "version": "0.1.0",
   "workspaces": [
-    "kds-web"
+    "kds-web",
+    "mock-delivery-console"
   ],
   "scripts": {
     "dev:kds": "npm --workspace kds-web run dev",
-    "build:kds": "npm --workspace kds-web run build"
+    "build:kds": "npm --workspace kds-web run build",
+    "dev:console": "npm --workspace mock-delivery-console run dev",
+    "build:console": "npm --workspace mock-delivery-console run build",
+    "smoke:kds-e2e": "python3 ./scripts/smoke_kds_e2e.py"
   }
 }
-

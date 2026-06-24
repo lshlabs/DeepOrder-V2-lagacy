@@ -1,0 +1,2796 @@
+{
+  "stores": [
+    {
+      "storeId": "1788000000000-hongkongbanjeom",
+      "storeName": "홍콩반점",
+      "platform": "MOCK_DELIVERY",
+      "available": true,
+      "menus": [
+        {
+          "menuId": "1788000000000-7cc9b213",
+          "name": "고기짜장",
+          "type": "MAIN",
+          "basePrice": 10500,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [
+            {
+              "groupId": "1788000000000-4e16c23a",
+              "groupName": "면 양 선택",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-8b4bf71a",
+                  "name": "기본",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-5fc2b5f6",
+                  "name": "곱빼기",
+                  "additionalPrice": 1500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 0
+            }
+          ],
+          "available": true,
+          "sortOrder": 0
+        },
+        {
+          "menuId": "1788000000000-2a99bb6c",
+          "name": "고기짬뽕밥",
+          "type": "MAIN",
+          "basePrice": 12000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 1
+        },
+        {
+          "menuId": "1788000000000-07c02d84",
+          "name": "고추짜장",
+          "type": "MAIN",
+          "basePrice": 9500,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [
+            {
+              "groupId": "1788000000000-a14110d4",
+              "groupName": "면 양 선택",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-0dcb3c3a",
+                  "name": "기본",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-bf867551",
+                  "name": "곱빼기",
+                  "additionalPrice": 1500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 0
+            }
+          ],
+          "available": true,
+          "sortOrder": 2
+        },
+        {
+          "menuId": "1788000000000-de308f7c",
+          "name": "고추짬뽕",
+          "type": "MAIN",
+          "basePrice": 11000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [
+            {
+              "groupId": "1788000000000-97f28e9f",
+              "groupName": "면 양 선택",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-d5d1d6d6",
+                  "name": "기본",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-25c8bcf4",
+                  "name": "곱빼기",
+                  "additionalPrice": 1500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 0
+            }
+          ],
+          "available": true,
+          "sortOrder": 3
+        },
+        {
+          "menuId": "1788000000000-1bb16ebf",
+          "name": "고추짬뽕밥",
+          "type": "MAIN",
+          "basePrice": 11000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 4
+        },
+        {
+          "menuId": "1788000000000-111fb307",
+          "name": "깐풍기",
+          "type": "MAIN",
+          "basePrice": 20900,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 5
+        },
+        {
+          "menuId": "1788000000000-d07e0c02",
+          "name": "깐풍새우",
+          "type": "MAIN",
+          "basePrice": 21900,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 6
+        },
+        {
+          "menuId": "1788000000000-bda125f4",
+          "name": "꿔바로우",
+          "type": "MAIN",
+          "basePrice": 20900,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 7
+        },
+        {
+          "menuId": "1788000000000-a0c5ee89",
+          "name": "볶음밥",
+          "type": "MAIN",
+          "basePrice": 11000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [
+            {
+              "groupId": "1790000000000-580dd616",
+              "groupName": "밥 양 선택",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1790000000000-e79d5bd6",
+                  "name": "기본",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1790000000000-1559d6f6",
+                  "name": "곱빼기",
+                  "additionalPrice": 1500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 0
+            }
+          ],
+          "available": true,
+          "sortOrder": 8
+        },
+        {
+          "menuId": "1788000000000-1184ae8a",
+          "name": "볶음짬뽕(1인분)",
+          "type": "MAIN",
+          "basePrice": 11500,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [
+            {
+              "groupId": "1788000000000-fd5706be",
+              "groupName": "맵기선택",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-c60cd7d2",
+                  "name": "기본",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-3ef405eb",
+                  "name": "맵게",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 0
+            }
+          ],
+          "available": true,
+          "sortOrder": 9
+        },
+        {
+          "menuId": "1788000000000-5b43aa27",
+          "name": "볶음짬뽕(2인분)",
+          "type": "MAIN",
+          "basePrice": 20000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [
+            {
+              "groupId": "1788000000000-5851d5de",
+              "groupName": "맵기선택",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-e051291f",
+                  "name": "기본",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-995ce12c",
+                  "name": "맵게",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 0
+            }
+          ],
+          "available": true,
+          "sortOrder": 10
+        },
+        {
+          "menuId": "1788000000000-2464ab10",
+          "name": "짜장면",
+          "type": "MAIN",
+          "basePrice": 8000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [
+            {
+              "groupId": "1788000000000-4f9e3f41",
+              "groupName": "면 양 선택",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-0154e8a1",
+                  "name": "기본",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-3efd50a6",
+                  "name": "곱빼기",
+                  "additionalPrice": 1500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 0
+            }
+          ],
+          "available": true,
+          "sortOrder": 11
+        },
+        {
+          "menuId": "1788000000000-7b0913d5",
+          "name": "짜장밥(국물제공)",
+          "type": "MAIN",
+          "basePrice": 10000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 12
+        },
+        {
+          "menuId": "1788000000000-2a1ba135",
+          "name": "짬뽕",
+          "type": "MAIN",
+          "basePrice": 10000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [
+            {
+              "groupId": "1788000000000-3ea4b338",
+              "groupName": "면 양 선택",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-c4763b06",
+                  "name": "기본",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-13b7705d",
+                  "name": "곱빼기",
+                  "additionalPrice": 1500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 0
+            }
+          ],
+          "available": true,
+          "sortOrder": 13
+        },
+        {
+          "menuId": "1788000000000-b0379c55",
+          "name": "짬뽕밥",
+          "type": "MAIN",
+          "basePrice": 10000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 14
+        },
+        {
+          "menuId": "1788000000000-741d0bfc",
+          "name": "쟁반짜장(2인분)",
+          "type": "MAIN",
+          "basePrice": 19000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [
+            {
+              "groupId": "1788000000000-3d596b88",
+              "groupName": "맵기선택",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-f19994d8",
+                  "name": "기본",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-ea8942df",
+                  "name": "맵게",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 0
+            }
+          ],
+          "available": true,
+          "sortOrder": 15
+        },
+        {
+          "menuId": "1788000000000-cdf61d25",
+          "name": "차돌짬뽕",
+          "type": "MAIN",
+          "basePrice": 14000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [
+            {
+              "groupId": "1788000000000-72cb24cd",
+              "groupName": "면 양 선택",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-4aede116",
+                  "name": "기본",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-636ac2a5",
+                  "name": "곱빼기",
+                  "additionalPrice": 1500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 0
+            }
+          ],
+          "available": true,
+          "sortOrder": 16
+        },
+        {
+          "menuId": "1788000000000-91e3df0b",
+          "name": "차돌짬뽕밥",
+          "type": "MAIN",
+          "basePrice": 14000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 17
+        },
+        {
+          "menuId": "1788000000000-41989202",
+          "name": "크림새우",
+          "type": "MAIN",
+          "basePrice": 21900,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 18
+        },
+        {
+          "menuId": "1788000000000-c7de268e",
+          "name": "탕수육 대",
+          "type": "MAIN",
+          "basePrice": 30800,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [
+            {
+              "groupId": "1788000000000-805f7b72",
+              "groupName": "탕수육 소스 선택",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-e2a57e17",
+                  "name": "기본 (새콤달콤 소스)",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-7a5bb154",
+                  "name": "사천식 (매콤소스)로 변경",
+                  "additionalPrice": 1000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 0
+            }
+          ],
+          "available": true,
+          "sortOrder": 19
+        },
+        {
+          "menuId": "1788000000000-6166fc61",
+          "name": "탕수육 미니",
+          "type": "MAIN",
+          "basePrice": 13800,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [
+            {
+              "groupId": "1788000000000-7bedea2d",
+              "groupName": "탕수육 소스 선택",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-3a2fc538",
+                  "name": "기본 (새콤달콤 소스)",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-70f84411",
+                  "name": "사천식 (매콤소스)로 변경",
+                  "additionalPrice": 1000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 0
+            }
+          ],
+          "available": true,
+          "sortOrder": 20
+        },
+        {
+          "menuId": "1788000000000-a627d943",
+          "name": "탕수육 소",
+          "type": "MAIN",
+          "basePrice": 17800,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [
+            {
+              "groupId": "1788000000000-7eeffc95",
+              "groupName": "탕수육 소스 선택",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-30d1064c",
+                  "name": "기본 (새콤달콤 소스)",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-8f51bd1d",
+                  "name": "사천식 (매콤소스)로 변경",
+                  "additionalPrice": 1000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 0
+            }
+          ],
+          "available": true,
+          "sortOrder": 21
+        },
+        {
+          "menuId": "1788000000000-cd3c3119",
+          "name": "탕수육 중",
+          "type": "MAIN",
+          "basePrice": 23800,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [
+            {
+              "groupId": "1788000000000-f00b4e6a",
+              "groupName": "탕수육 소스 선택",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-aa093627",
+                  "name": "기본 (새콤달콤 소스)",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-fe551e68",
+                  "name": "사천식 (매콤소스)로 변경",
+                  "additionalPrice": 1000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 0
+            }
+          ],
+          "available": true,
+          "sortOrder": 22
+        },
+        {
+          "menuId": "1789000000000-9062ec7f",
+          "name": "고기짬뽕",
+          "type": "MAIN",
+          "basePrice": 12000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [
+            {
+              "groupId": "1789000000000-dc84b07b",
+              "groupName": "면 양 선택",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1789000000000-616c57b9",
+                  "name": "기본",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1789000000000-a3dc9258",
+                  "name": "곱빼기",
+                  "additionalPrice": 1500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 0
+            }
+          ],
+          "available": true,
+          "sortOrder": 23
+        },
+        {
+          "menuId": "1788000000000-2ffb590f",
+          "name": "식사1+탕수육 미니",
+          "type": "SET",
+          "basePrice": 21800,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [
+            {
+              "groupId": "1788000000000-5c0ec815",
+              "groupName": "식사",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1790000000000-138e8d16",
+                  "name": "짜장면",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1790000000000-d75ddc7a",
+                  "name": "짜장면 곱빼기",
+                  "additionalPrice": 1500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                },
+                {
+                  "optionId": "1790000000000-2fb22e13",
+                  "name": "짬뽕",
+                  "additionalPrice": 2000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 2
+                },
+                {
+                  "optionId": "1790000000000-26f14d44",
+                  "name": "짬뽕 곱빼기",
+                  "additionalPrice": 3500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 3
+                },
+                {
+                  "optionId": "1790000000000-86f1568a",
+                  "name": "고추짜장",
+                  "additionalPrice": 1500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 4
+                },
+                {
+                  "optionId": "1790000000000-8a6800da",
+                  "name": "고추짜장 곱빼기",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 5
+                },
+                {
+                  "optionId": "1790000000000-35a2b8bf",
+                  "name": "고추짬뽕",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 6
+                },
+                {
+                  "optionId": "1790000000000-4abdf9bb",
+                  "name": "고추짬뽕 곱빼기",
+                  "additionalPrice": 4500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 7
+                },
+                {
+                  "optionId": "1790000000000-fd0f924e",
+                  "name": "고기짜장",
+                  "additionalPrice": 2500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 8
+                },
+                {
+                  "optionId": "1790000000000-9529fa75",
+                  "name": "고기짜장 곱빼기",
+                  "additionalPrice": 4000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 9
+                },
+                {
+                  "optionId": "1790000000000-49bbba50",
+                  "name": "고기짬뽕",
+                  "additionalPrice": 4000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 10
+                },
+                {
+                  "optionId": "1790000000000-deb1991c",
+                  "name": "고기짬뽕 곱빼기",
+                  "additionalPrice": 5500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 11
+                },
+                {
+                  "optionId": "1790000000000-780f649c",
+                  "name": "차돌짬뽕",
+                  "additionalPrice": 6000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 12
+                },
+                {
+                  "optionId": "1790000000000-dfe3a4ea",
+                  "name": "차돌짬뽕 곱빼기",
+                  "additionalPrice": 7500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 13
+                },
+                {
+                  "optionId": "1790000000000-89b67da9",
+                  "name": "볶음짬뽕(1인분)",
+                  "additionalPrice": 3500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 14
+                },
+                {
+                  "optionId": "1790000000000-d6027d07",
+                  "name": "짬뽕밥",
+                  "additionalPrice": 2000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 15
+                },
+                {
+                  "optionId": "1790000000000-92691ec5",
+                  "name": "짜장밥(국물제공)",
+                  "additionalPrice": 2000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 16
+                },
+                {
+                  "optionId": "1790000000000-82951d47",
+                  "name": "볶음밥",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 17
+                },
+                {
+                  "optionId": "1790000000000-2435c69d",
+                  "name": "볶음밥 곱빼기",
+                  "additionalPrice": 4500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 18
+                },
+                {
+                  "optionId": "1790000000000-f0e7a35a",
+                  "name": "고추짬뽕밥",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 19
+                },
+                {
+                  "optionId": "1790000000000-41a592db",
+                  "name": "고기짬뽕밥",
+                  "additionalPrice": 4000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 20
+                },
+                {
+                  "optionId": "1790000000000-2480612d",
+                  "name": "차돌짬뽕밥",
+                  "additionalPrice": 6000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 21
+                }
+              ],
+              "available": true,
+              "sortOrder": 0
+            },
+            {
+              "groupId": "1788000000000-88332d77",
+              "groupName": "탕수육 소스 선택",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-5d72d3c8",
+                  "name": "기본 (새콤달콤 소스)",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-bb684b64",
+                  "name": "사천식 (매콤소스)로 변경",
+                  "additionalPrice": 1000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 1
+            }
+          ],
+          "available": true,
+          "sortOrder": 24
+        },
+        {
+          "menuId": "1788000000000-363e2d0c",
+          "name": "식사2+탕수육 미니",
+          "type": "SET",
+          "basePrice": 29800,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [
+            {
+              "groupId": "1788000000000-623138cf",
+              "groupName": "식사1",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1790000000000-b03d50c7",
+                  "name": "짜장면",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1790000000000-675dfb55",
+                  "name": "짜장면 곱빼기",
+                  "additionalPrice": 1500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                },
+                {
+                  "optionId": "1790000000000-e983d8c6",
+                  "name": "짬뽕",
+                  "additionalPrice": 2000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 2
+                },
+                {
+                  "optionId": "1790000000000-d1402f00",
+                  "name": "짬뽕 곱빼기",
+                  "additionalPrice": 3500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 3
+                },
+                {
+                  "optionId": "1790000000000-df91d64d",
+                  "name": "고추짜장",
+                  "additionalPrice": 1500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 4
+                },
+                {
+                  "optionId": "1790000000000-f7edfec5",
+                  "name": "고추짜장 곱빼기",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 5
+                },
+                {
+                  "optionId": "1790000000000-1eda7986",
+                  "name": "고추짬뽕",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 6
+                },
+                {
+                  "optionId": "1790000000000-34855e57",
+                  "name": "고추짬뽕 곱빼기",
+                  "additionalPrice": 4500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 7
+                },
+                {
+                  "optionId": "1790000000000-4fc9f616",
+                  "name": "고기짜장",
+                  "additionalPrice": 2500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 8
+                },
+                {
+                  "optionId": "1790000000000-58fda70d",
+                  "name": "고기짜장 곱빼기",
+                  "additionalPrice": 4000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 9
+                },
+                {
+                  "optionId": "1790000000000-ff1ce02f",
+                  "name": "고기짬뽕",
+                  "additionalPrice": 4000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 10
+                },
+                {
+                  "optionId": "1790000000000-848c8d25",
+                  "name": "고기짬뽕 곱빼기",
+                  "additionalPrice": 5500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 11
+                },
+                {
+                  "optionId": "1790000000000-bfece50b",
+                  "name": "차돌짬뽕",
+                  "additionalPrice": 6000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 12
+                },
+                {
+                  "optionId": "1790000000000-24957e6b",
+                  "name": "차돌짬뽕 곱빼기",
+                  "additionalPrice": 7500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 13
+                },
+                {
+                  "optionId": "1790000000000-98b091c8",
+                  "name": "볶음짬뽕(1인분)",
+                  "additionalPrice": 3500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 14
+                },
+                {
+                  "optionId": "1790000000000-8f057c1e",
+                  "name": "짬뽕밥",
+                  "additionalPrice": 2000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 15
+                },
+                {
+                  "optionId": "1790000000000-0c6a8b4a",
+                  "name": "짜장밥(국물제공)",
+                  "additionalPrice": 2000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 16
+                },
+                {
+                  "optionId": "1790000000000-777006bb",
+                  "name": "볶음밥",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 17
+                },
+                {
+                  "optionId": "1790000000000-3a0a4534",
+                  "name": "볶음밥 곱빼기",
+                  "additionalPrice": 4500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 18
+                },
+                {
+                  "optionId": "1790000000000-9f7a40b0",
+                  "name": "고추짬뽕밥",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 19
+                },
+                {
+                  "optionId": "1790000000000-80c3a1a8",
+                  "name": "고기짬뽕밥",
+                  "additionalPrice": 4000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 20
+                },
+                {
+                  "optionId": "1790000000000-5f6dc81b",
+                  "name": "차돌짬뽕밥",
+                  "additionalPrice": 6000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 21
+                }
+              ],
+              "available": true,
+              "sortOrder": 0
+            },
+            {
+              "groupId": "1788000000000-463eff55",
+              "groupName": "식사2",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1790000000000-7353dbc7",
+                  "name": "짜장면",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1790000000000-4fb4f811",
+                  "name": "짜장면 곱빼기",
+                  "additionalPrice": 1500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                },
+                {
+                  "optionId": "1790000000000-63c3d02e",
+                  "name": "짬뽕",
+                  "additionalPrice": 2000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 2
+                },
+                {
+                  "optionId": "1790000000000-b2245042",
+                  "name": "짬뽕 곱빼기",
+                  "additionalPrice": 3500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 3
+                },
+                {
+                  "optionId": "1790000000000-7c433272",
+                  "name": "고추짜장",
+                  "additionalPrice": 1500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 4
+                },
+                {
+                  "optionId": "1790000000000-913dea50",
+                  "name": "고추짜장 곱빼기",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 5
+                },
+                {
+                  "optionId": "1790000000000-29db8c45",
+                  "name": "고추짬뽕",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 6
+                },
+                {
+                  "optionId": "1790000000000-2c966081",
+                  "name": "고추짬뽕 곱빼기",
+                  "additionalPrice": 4500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 7
+                },
+                {
+                  "optionId": "1790000000000-cd4a4f98",
+                  "name": "고기짜장",
+                  "additionalPrice": 2500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 8
+                },
+                {
+                  "optionId": "1790000000000-bb38bf72",
+                  "name": "고기짜장 곱빼기",
+                  "additionalPrice": 4000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 9
+                },
+                {
+                  "optionId": "1790000000000-f6b8845c",
+                  "name": "고기짬뽕",
+                  "additionalPrice": 4000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 10
+                },
+                {
+                  "optionId": "1790000000000-25720e8f",
+                  "name": "고기짬뽕 곱빼기",
+                  "additionalPrice": 5500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 11
+                },
+                {
+                  "optionId": "1790000000000-0a909894",
+                  "name": "차돌짬뽕",
+                  "additionalPrice": 6000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 12
+                },
+                {
+                  "optionId": "1790000000000-8673a679",
+                  "name": "차돌짬뽕 곱빼기",
+                  "additionalPrice": 7500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 13
+                },
+                {
+                  "optionId": "1790000000000-36dc54f5",
+                  "name": "볶음짬뽕(1인분)",
+                  "additionalPrice": 3500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 14
+                },
+                {
+                  "optionId": "1790000000000-b629d596",
+                  "name": "짬뽕밥",
+                  "additionalPrice": 2000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 15
+                },
+                {
+                  "optionId": "1790000000000-4adf70be",
+                  "name": "짜장밥(국물제공)",
+                  "additionalPrice": 2000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 16
+                },
+                {
+                  "optionId": "1790000000000-1dfaabbc",
+                  "name": "볶음밥",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 17
+                },
+                {
+                  "optionId": "1790000000000-9db560b7",
+                  "name": "볶음밥 곱빼기",
+                  "additionalPrice": 4500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 18
+                },
+                {
+                  "optionId": "1790000000000-ffa5e409",
+                  "name": "고추짬뽕밥",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 19
+                },
+                {
+                  "optionId": "1790000000000-8c1f3d68",
+                  "name": "고기짬뽕밥",
+                  "additionalPrice": 4000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 20
+                },
+                {
+                  "optionId": "1790000000000-f632818c",
+                  "name": "차돌짬뽕밥",
+                  "additionalPrice": 6000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 21
+                }
+              ],
+              "available": true,
+              "sortOrder": 1
+            },
+            {
+              "groupId": "1788000000000-1e7a7e67",
+              "groupName": "탕수육 소스 선택",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-a140cbb5",
+                  "name": "기본 (새콤달콤 소스)",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-12c764fc",
+                  "name": "사천식 (매콤소스)로 변경",
+                  "additionalPrice": 1000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 2
+            }
+          ],
+          "available": true,
+          "sortOrder": 25
+        },
+        {
+          "menuId": "1788000000000-489f99d8",
+          "name": "식사2+탕수육+군만두",
+          "type": "SET",
+          "basePrice": 37800,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [
+            {
+              "groupId": "1788000000000-3942244f",
+              "groupName": "식사1",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1790000000000-46086028",
+                  "name": "짜장면",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1790000000000-ca4c399c",
+                  "name": "짜장면 곱빼기",
+                  "additionalPrice": 1500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                },
+                {
+                  "optionId": "1790000000000-9085c93a",
+                  "name": "짬뽕",
+                  "additionalPrice": 2000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 2
+                },
+                {
+                  "optionId": "1790000000000-9972b7aa",
+                  "name": "짬뽕 곱빼기",
+                  "additionalPrice": 3500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 3
+                },
+                {
+                  "optionId": "1790000000000-8ebec283",
+                  "name": "고추짜장",
+                  "additionalPrice": 1500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 4
+                },
+                {
+                  "optionId": "1790000000000-b800f1ed",
+                  "name": "고추짜장 곱빼기",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 5
+                },
+                {
+                  "optionId": "1790000000000-711022a6",
+                  "name": "고추짬뽕",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 6
+                },
+                {
+                  "optionId": "1790000000000-86b6dafb",
+                  "name": "고추짬뽕 곱빼기",
+                  "additionalPrice": 4500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 7
+                },
+                {
+                  "optionId": "1790000000000-396ac874",
+                  "name": "고기짜장",
+                  "additionalPrice": 2500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 8
+                },
+                {
+                  "optionId": "1790000000000-58e6c139",
+                  "name": "고기짜장 곱빼기",
+                  "additionalPrice": 4000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 9
+                },
+                {
+                  "optionId": "1790000000000-a13cea17",
+                  "name": "고기짬뽕",
+                  "additionalPrice": 4000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 10
+                },
+                {
+                  "optionId": "1790000000000-725abde3",
+                  "name": "고기짬뽕 곱빼기",
+                  "additionalPrice": 5500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 11
+                },
+                {
+                  "optionId": "1790000000000-282accc0",
+                  "name": "차돌짬뽕",
+                  "additionalPrice": 6000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 12
+                },
+                {
+                  "optionId": "1790000000000-35082dd4",
+                  "name": "차돌짬뽕 곱빼기",
+                  "additionalPrice": 7500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 13
+                },
+                {
+                  "optionId": "1790000000000-2d165aad",
+                  "name": "볶음짬뽕(1인분)",
+                  "additionalPrice": 3500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 14
+                },
+                {
+                  "optionId": "1790000000000-f95c8a47",
+                  "name": "짬뽕밥",
+                  "additionalPrice": 2000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 15
+                },
+                {
+                  "optionId": "1790000000000-8591e594",
+                  "name": "짜장밥(국물제공)",
+                  "additionalPrice": 2000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 16
+                },
+                {
+                  "optionId": "1790000000000-38128539",
+                  "name": "볶음밥",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 17
+                },
+                {
+                  "optionId": "1790000000000-25e9e265",
+                  "name": "볶음밥 곱빼기",
+                  "additionalPrice": 4500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 18
+                },
+                {
+                  "optionId": "1790000000000-4078e315",
+                  "name": "고추짬뽕밥",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 19
+                },
+                {
+                  "optionId": "1790000000000-4d4a7455",
+                  "name": "고기짬뽕밥",
+                  "additionalPrice": 4000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 20
+                },
+                {
+                  "optionId": "1790000000000-43e8ced5",
+                  "name": "차돌짬뽕밥",
+                  "additionalPrice": 6000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 21
+                }
+              ],
+              "available": true,
+              "sortOrder": 0
+            },
+            {
+              "groupId": "1788000000000-8c03e6e7",
+              "groupName": "식사2",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1790000000000-7be210d0",
+                  "name": "짜장면",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1790000000000-67c9f44d",
+                  "name": "짜장면 곱빼기",
+                  "additionalPrice": 1500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                },
+                {
+                  "optionId": "1790000000000-e1428093",
+                  "name": "짬뽕",
+                  "additionalPrice": 2000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 2
+                },
+                {
+                  "optionId": "1790000000000-6ab58020",
+                  "name": "짬뽕 곱빼기",
+                  "additionalPrice": 3500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 3
+                },
+                {
+                  "optionId": "1790000000000-516ee86d",
+                  "name": "고추짜장",
+                  "additionalPrice": 1500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 4
+                },
+                {
+                  "optionId": "1790000000000-1c72812f",
+                  "name": "고추짜장 곱빼기",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 5
+                },
+                {
+                  "optionId": "1790000000000-24197b4f",
+                  "name": "고추짬뽕",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 6
+                },
+                {
+                  "optionId": "1790000000000-954417b2",
+                  "name": "고추짬뽕 곱빼기",
+                  "additionalPrice": 4500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 7
+                },
+                {
+                  "optionId": "1790000000000-d5923623",
+                  "name": "고기짜장",
+                  "additionalPrice": 2500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 8
+                },
+                {
+                  "optionId": "1790000000000-24c293dc",
+                  "name": "고기짜장 곱빼기",
+                  "additionalPrice": 4000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 9
+                },
+                {
+                  "optionId": "1790000000000-9d84ea8e",
+                  "name": "고기짬뽕",
+                  "additionalPrice": 4000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 10
+                },
+                {
+                  "optionId": "1790000000000-c20286ce",
+                  "name": "고기짬뽕 곱빼기",
+                  "additionalPrice": 5500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 11
+                },
+                {
+                  "optionId": "1790000000000-feb0af84",
+                  "name": "차돌짬뽕",
+                  "additionalPrice": 6000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 12
+                },
+                {
+                  "optionId": "1790000000000-74061afa",
+                  "name": "차돌짬뽕 곱빼기",
+                  "additionalPrice": 7500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 13
+                },
+                {
+                  "optionId": "1790000000000-76d419de",
+                  "name": "볶음짬뽕(1인분)",
+                  "additionalPrice": 3500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 14
+                },
+                {
+                  "optionId": "1790000000000-3a6cf3ce",
+                  "name": "짬뽕밥",
+                  "additionalPrice": 2000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 15
+                },
+                {
+                  "optionId": "1790000000000-88e3aaca",
+                  "name": "짜장밥(국물제공)",
+                  "additionalPrice": 2000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 16
+                },
+                {
+                  "optionId": "1790000000000-4aeb9fed",
+                  "name": "볶음밥",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 17
+                },
+                {
+                  "optionId": "1790000000000-99f3a7c2",
+                  "name": "볶음밥 곱빼기",
+                  "additionalPrice": 4500,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 18
+                },
+                {
+                  "optionId": "1790000000000-f6ca6be9",
+                  "name": "고추짬뽕밥",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 19
+                },
+                {
+                  "optionId": "1790000000000-f51abc27",
+                  "name": "고기짬뽕밥",
+                  "additionalPrice": 4000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 20
+                },
+                {
+                  "optionId": "1790000000000-f8604727",
+                  "name": "차돌짬뽕밥",
+                  "additionalPrice": 6000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 21
+                }
+              ],
+              "available": true,
+              "sortOrder": 1
+            },
+            {
+              "groupId": "1788000000000-b19bc4ed",
+              "groupName": "탕수육",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-38c9c692",
+                  "name": "소",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": "1788000000000-a627d943",
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-fc27015d",
+                  "name": "중",
+                  "additionalPrice": 6000,
+                  "effect": "ADD",
+                  "linkedMenuId": "1788000000000-cd3c3119",
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                },
+                {
+                  "optionId": "1788000000000-959c102f",
+                  "name": "대",
+                  "additionalPrice": 13000,
+                  "effect": "ADD",
+                  "linkedMenuId": "1788000000000-c7de268e",
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 2
+                }
+              ],
+              "available": true,
+              "sortOrder": 2
+            },
+            {
+              "groupId": "1788000000000-3df6b54e",
+              "groupName": "군만두",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-8a53aba3",
+                  "name": "4개",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-ce576e25",
+                  "name": "8개",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": "1788000000000-ed83f9ed",
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 3
+            },
+            {
+              "groupId": "1788000000000-4fb4419f",
+              "groupName": "탕수육 소스 선택",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-c0b1f2ec",
+                  "name": "기본 (새콤달콤 소스)",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-471dd258",
+                  "name": "사천식 (매콤소스)로 변경",
+                  "additionalPrice": 1000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 4
+            }
+          ],
+          "available": true,
+          "sortOrder": 26
+        },
+        {
+          "menuId": "1788000000000-1e617c48",
+          "name": "쟁반짜장세트",
+          "type": "SET",
+          "basePrice": 38800,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [
+            {
+              "groupId": "1788000000000-b7537b2f",
+              "groupName": "쟁반짜장",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-692d3975",
+                  "name": "기본",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": "1788000000000-741d0bfc",
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-901ed870",
+                  "name": "맵게",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": "1788000000000-741d0bfc",
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 0
+            },
+            {
+              "groupId": "1788000000000-2f5df016",
+              "groupName": "탕수육",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-26ebb10e",
+                  "name": "소",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": "1788000000000-a627d943",
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-d32a1a9d",
+                  "name": "중",
+                  "additionalPrice": 6000,
+                  "effect": "ADD",
+                  "linkedMenuId": "1788000000000-cd3c3119",
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                },
+                {
+                  "optionId": "1788000000000-cb3bac0a",
+                  "name": "대",
+                  "additionalPrice": 13000,
+                  "effect": "ADD",
+                  "linkedMenuId": "1788000000000-c7de268e",
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 2
+                }
+              ],
+              "available": true,
+              "sortOrder": 1
+            },
+            {
+              "groupId": "1788000000000-c04f3133",
+              "groupName": "군만두",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-2b8af70f",
+                  "name": "4개",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-0541f060",
+                  "name": "8개",
+                  "additionalPrice": 3000,
+                  "effect": "ADD",
+                  "linkedMenuId": "1788000000000-ed83f9ed",
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 2
+            },
+            {
+              "groupId": "1788000000000-6a00396a",
+              "groupName": "탕수육 소스 선택",
+              "selectionType": "RADIO",
+              "required": true,
+              "minSelect": 1,
+              "maxSelect": 1,
+              "options": [
+                {
+                  "optionId": "1788000000000-76b94336",
+                  "name": "기본 (새콤달콤 소스)",
+                  "additionalPrice": 0,
+                  "effect": "NONE",
+                  "linkedMenuId": null,
+                  "defaultSelected": true,
+                  "available": true,
+                  "sortOrder": 0
+                },
+                {
+                  "optionId": "1788000000000-818aa2ab",
+                  "name": "사천식 (매콤소스)로 변경",
+                  "additionalPrice": 1000,
+                  "effect": "ADD",
+                  "linkedMenuId": null,
+                  "defaultSelected": false,
+                  "available": true,
+                  "sortOrder": 1
+                }
+              ],
+              "available": true,
+              "sortOrder": 3
+            }
+          ],
+          "available": true,
+          "sortOrder": 27
+        },
+        {
+          "menuId": "1788000000000-aef32b32",
+          "name": "계란프라이",
+          "type": "SIDE",
+          "basePrice": 900,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 28
+        },
+        {
+          "menuId": "1788000000000-d7ba618e",
+          "name": "공기밥",
+          "type": "SIDE",
+          "basePrice": 1000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 29
+        },
+        {
+          "menuId": "1788000000000-ed83f9ed",
+          "name": "군만두 8개",
+          "type": "SIDE",
+          "basePrice": 7000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 30
+        },
+        {
+          "menuId": "1788000000000-518faaed",
+          "name": "단무지 추가",
+          "type": "SIDE",
+          "basePrice": 1000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 31
+        },
+        {
+          "menuId": "1788000000000-e4e52093",
+          "name": "단팥춘권",
+          "type": "SIDE",
+          "basePrice": 3000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 32
+        },
+        {
+          "menuId": "1788000000000-74402d74",
+          "name": "연유꽃빵",
+          "type": "SIDE",
+          "basePrice": 5000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 33
+        },
+        {
+          "menuId": "1788000000000-3507bca9",
+          "name": "짜장소스 1통",
+          "type": "SIDE",
+          "basePrice": 4500,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 34
+        },
+        {
+          "menuId": "1788000000000-0116131c",
+          "name": "짬뽕국물",
+          "type": "SIDE",
+          "basePrice": 2000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 35
+        },
+        {
+          "menuId": "1788000000000-1a83a6eb",
+          "name": "해시브라운 3개",
+          "type": "SIDE",
+          "basePrice": 2500,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 36
+        },
+        {
+          "menuId": "1788000000000-e7c36e5c",
+          "name": "스프라이트(355ml)",
+          "type": "DRINK",
+          "basePrice": 2000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 37
+        },
+        {
+          "menuId": "1788000000000-b154d330",
+          "name": "암바사(345ml)",
+          "type": "DRINK",
+          "basePrice": 2000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 38
+        },
+        {
+          "menuId": "1788000000000-92c05f1d",
+          "name": "제로콜라(355ml)",
+          "type": "DRINK",
+          "basePrice": 2000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 39
+        },
+        {
+          "menuId": "1788000000000-045f53be",
+          "name": "초록매실(180ml)",
+          "type": "DRINK",
+          "basePrice": 1000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 40
+        },
+        {
+          "menuId": "1788000000000-a417b9e3",
+          "name": "코카콜라(355ml)",
+          "type": "DRINK",
+          "basePrice": 2000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 41
+        },
+        {
+          "menuId": "1788000000000-457784a1",
+          "name": "환타(355ml)",
+          "type": "DRINK",
+          "basePrice": 2000,
+          "allergens": {
+            "rawText": "",
+            "normalizedAllergens": [],
+            "parseStatus": "MANUAL"
+          },
+          "quantityRule": {
+            "min": 1,
+            "max": 10,
+            "default": 1
+          },
+          "optionGroups": [],
+          "available": true,
+          "sortOrder": 42
+        }
+      ]
+    }
+  ]
+}
