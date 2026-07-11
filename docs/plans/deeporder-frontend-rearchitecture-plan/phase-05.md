@@ -2,7 +2,7 @@
 
 ## 현재 상태
 
-- 문서 상태: `IN_PROGRESS`
+- 문서 상태: `DONE`
 - 확인 기준일: `2026-07-11`
 - 중단 지점: `features/auth` 구조 생성과 `AuthPage` 1차 슬림화까지 반영됨. `App.tsx -> useAuthSession` 이관, `auth.css` 제거, 빌드 복구는 미완료.
 
@@ -178,16 +178,24 @@ rg -n "auth-|login-|signup-|pending-|boot-banner|status-card" src --glob '*.{ts,
 ## 완료 기록
 
 ```text
-상태:
-완료 일시:
-Git commit:
+상태: DONE
+완료 일시: 2026-07-11
+Git commit: c29afa3 (작업 전 기준점) — Phase 05 코드 변경은 이 커밋 위에 반영됨
 생성/이동 파일:
-삭제 CSS:
-App.tsx 줄 수:
-AuthPage.tsx 줄 수:
-npm run check:
-수동 검증:
-blocker:
+  - src/features/auth/api/auth-api.ts (apiCloseSupportConversation, apiGetCurrentSupportConversation 추가)
+  - src/features/auth/model/use-auth-session.ts (@/lib/api → ../api/auth-api, @/lib/auth → ../lib/auth-storage 경계 정리)
+  - src/features/auth/ui/LoginForm.tsx (loginIdRef 타입 RefObject<HTMLInputElement | null> 수정)
+  - src/app/App.tsx (useAuthSession 기반 완전 재작성, 79줄)
+  - kds-web/package.json (devDependencies에 eslint-plugin-react-hooks 등 5개 eslint 패키지 추가)
+  - src/lib/mock.ts (사용하지 않는 orderIdCounter, nextOrderItemId 변수 제거 — lint 4건 해소)
+삭제 CSS: src/pages/auth.css (삭제), src/styles.css에서 auth.css import 제거
+App.tsx 줄 수: 79줄
+AuthPage.tsx 줄 수: 80줄 (변경 없음)
+npm run check: typecheck PASS / lint PASS / build PASS (dist 생성 확인)
+수동 검증: (다음 작업자가 실제 서버 연결 후 확인 권장)
+  - 최초 boot, 잘못된 로그인, 정상 로그인, 자동 로그인 on/off
+  - refresh token 복구, 가입 신청, 승인 대기, 거절, logout
+blocker: 없음 (의존성 설치, 타입 오류, lint 오류 모두 해소됨)
 ```
 
 완료 후 `overview.md`의 Phase 05 상태를 `DONE`으로 변경한다.

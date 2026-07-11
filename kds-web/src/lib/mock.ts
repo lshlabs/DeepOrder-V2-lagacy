@@ -63,8 +63,6 @@ const mockStore = {
 
 // ── Helpers ────────────────────────────────────────────────
 
-let orderIdCounter = 100;
-
 function makeOrderItem(id: number, name: string, quantity: number, done = false, options: OrderItemOption[] = []): OrderItem {
   return {
     id,
@@ -147,7 +145,6 @@ let mockAssignedMenuList: AssignedMenu[] = [
 
 let nextStaffId = 10;
 let nextMenuId = 10;
-let nextOrderItemId = 100;
 
 function buildMockOrders(): Order[] {
   return [

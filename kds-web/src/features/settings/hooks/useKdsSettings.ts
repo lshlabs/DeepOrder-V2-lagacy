@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
 
-import { apiGetKdsSettings, apiUpdateKdsSettings } from "../../../../lib/api";
-import { requestWithReauth } from "../../../../shared/lib/requestWithReauth";
+import { apiGetKdsSettings, apiUpdateKdsSettings } from "@/lib/api";
+import { requestWithReauth } from "@/shared/lib/requestWithReauth";
 import { mapApiSettingsToUi, mapUiSettingsToApi } from "../lib/settingsMapper";
-import { DEFAULT_SETTINGS_STATE, type SettingsState } from "../../types";
-import type { ShowToast } from "../../../../shared/hooks/useToast";
+import { DEFAULT_SETTINGS_STATE, type SettingsState } from "@/features/kds/types";
+import type { ShowToast } from "@/lib/notify";
 
 type UseKdsSettingsParams = {
   accessToken: string;

@@ -34,7 +34,7 @@
 ## 현재 상태 요약
 
 - 기준일: 2026-07-11
-- 현재 작업 중 Phase: `Phase 05`
+- 현재 작업 중 Phase: `Phase 08`
 - 이번 세션에서 실제 중단 지점까지 확인한 Phase: `Phase 05`
 - `Phase 01~04`는 실제 코드 기준으로 빠르게 재판정했다.
   - `Phase 01`: `PENDING`
@@ -151,7 +151,7 @@ kds-web/
 16. `any`, `@ts-ignore`, 불필요한 non-null assertion을 추가하지 않는다.
 17. 접근성을 유지한다. interactive element에는 올바른 semantic element, label, keyboard interaction, focus 상태와 `aria-*`를 제공한다.
 18. 패키지 버전의 대규모 갱신은 하지 않는다. 현재 Phase에서 필요한 의존성만 추가·제거한다.
-19. 단일 Phase 작업이면 종료 전 `npm run check`를 실행한다.
+19. 단일 Phase 작업이면 종료 전 `npm run check`를 ���행한다.
 20. 번들 작업이면 중간 Phase는 `typecheck + lint + 해당 smoke`, 번들 종료 Phase에서만 `npm run check`를 실행한다.
 21. 명령 실패 상태에서는 Phase를 `DONE`으로 표시하지 않는다.
 22. Phase 완료 시 해당 문서의 `완료 기록`을 채우고 `overview.md` 상태를 갱신한다.
@@ -167,10 +167,10 @@ kds-web/
 | 02 | `phase-02.md` | Tailwind 전역 진입점, semantic token, alias 정상화 | PENDING |
 | 03 | `phase-03.md` | shadcn primitive와 공통 block 계층 구축 | PENDING |
 | 04 | `phase-04.md` | app/pages/layout 골격과 KDS shell 분리 | PENDING |
-| 05 | `phase-05.md` | 인증 도메인 구조 및 `auth.css` 제거 | IN_PROGRESS |
-| 06 | `phase-06.md` | layout, store-status, toast/floating 전환 | PENDING |
-| 07 | `phase-07.md` | settings 전환 및 Ant Design 제거 | PENDING |
-| 08 | `phase-08.md` | staff/tasks 전환 및 shared table selector 축소 | PENDING |
+| 05 | `phase-05.md` | 인증 도메인 구조 및 `auth.css` 제거 | DONE |
+| 06 | `phase-06.md` | layout, store-status, toast/floating 전환 | DONE |
+| 07 | `phase-07.md` | settings 전환 및 Ant Design 제거 | DONE |
+| 08 | `phase-08.md` | staff/tasks 전환 및 shared table selector 축소 | IN_PROGRESS |
 | 09 | `phase-09.md` | support/chatbot 전환 및 `support.css` 제거 | PENDING |
 | 10 | `phase-10.md` | stats 전환 및 scoped reset/CSS 제거 | PENDING |
 | 11 | `phase-11.md` | orders 전환 및 `orders.css` 제거 | PENDING |

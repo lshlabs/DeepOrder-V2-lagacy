@@ -18,7 +18,7 @@ import {
 import { requestWithReauth } from "../../../../shared/lib/requestWithReauth";
 import type { Order, OrderStatus } from "../../../../types";
 import type { OrderSortDirection } from "../../types";
-import type { ShowToast } from "../../../../shared/hooks/useToast";
+import type { ShowToast } from "@/lib/notify";
 
 const POLLING_INTERVAL_MS = 3000;
 

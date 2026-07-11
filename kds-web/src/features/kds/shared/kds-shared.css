@@ -700,3 +700,186 @@
   background: var(--color-surface-3);
   color: var(--color-text-muted);
 }
+
+/* ═══════════════════════════════════════════════
+   Settings panel rows / toggles / segmented
+═══════════════════════════════════════════════ */
+.kds-settings-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.kds-settings-row {
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 13px 22px;
+}
+
+.kds-panel--settings .kds-settings-row {
+  padding: 14px 0;
+}
+
+.kds-settings-row:last-child { border-bottom: none; }
+
+.kds-settings-row--sub {
+  background: var(--color-surface-2);
+  padding-left: 30px;
+}
+
+.kds-settings-row--disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.kds-settings-row--disabled .kds-settings-row-label,
+.kds-settings-row--disabled .kds-settings-row-desc {
+  opacity: 0.6;
+}
+
+.kds-settings-field-row {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.kds-settings-row-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.kds-settings-inline-control {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+  min-width: 0;
+}
+
+.kds-settings-row-label {
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.kds-settings-row-desc {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.kds-settings-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.kds-settings-label {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.kds-settings-error {
+  color: var(--color-error-text);
+  font-size: 12px;
+}
+
+.kds-settings-hint {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+/* Time input (replaces antd TimePicker) */
+.kds-time-input {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-size: 13px;
+  height: 30px;
+  padding: 0 6px;
+  text-align: center;
+  width: 74px;
+}
+
+.kds-time-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+/* ── Toggle switch ── */
+.kds-toggle {
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  cursor: pointer;
+  flex-shrink: 0;
+  height: 24px;
+  padding: 2px;
+  position: relative;
+  transition: background 0.18s, border-color 0.18s;
+  width: 44px;
+}
+
+.kds-toggle.on {
+  background: var(--color-accent);
+  border-color: var(--color-accent-border);
+}
+
+.kds-toggle-knob {
+  background: #b4b9c2;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: block;
+  height: 18px;
+  left: 2px;
+  position: absolute;
+  top: 2px;
+  transition: transform 0.18s, background 0.18s;
+  width: 18px;
+}
+
+.kds-toggle.on .kds-toggle-knob {
+  background: #fff;
+  transform: translateX(20px);
+}
+
+/* ── Segmented control ── */
+.kds-segmented {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+}
+
+.kds-segmented-btn {
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  height: 26px;
+  padding: 0 9px;
+  transition: background 0.12s, color 0.12s;
+  white-space: nowrap;
+}
+
+.kds-segmented-btn.active {
+  background: var(--color-surface);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.kds-segmented-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}

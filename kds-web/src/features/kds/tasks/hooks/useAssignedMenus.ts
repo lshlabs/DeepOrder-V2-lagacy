@@ -8,7 +8,7 @@ import {
 } from "../../../../lib/api";
 import { requestWithReauth } from "../../../../shared/lib/requestWithReauth";
 import type { AssignedMenu } from "../../../../types";
-import type { ShowToast } from "../../../../shared/hooks/useToast";
+import type { ShowToast } from "@/lib/notify";
 
 type UseAssignedMenusParams = {
   accessToken: string;

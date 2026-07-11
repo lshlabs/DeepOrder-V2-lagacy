@@ -1,4 +1,4 @@
-import type { StoreStatus } from "../../types";
+import type { StoreStatus } from "@/features/kds/types";
 
 type StoreStatusDotProps = {
   status: StoreStatus;

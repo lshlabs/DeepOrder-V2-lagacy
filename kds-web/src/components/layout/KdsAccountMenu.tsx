@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { LogOut } from "lucide-react";
 
-import { PopoverPanel } from "@/shared/components/floating/PopoverPanel";
+import { PopoverPanel } from "@/components/layout/PopoverPanel";
 import type { AuthSession } from "@/types";
 
 type KdsAccountMenuProps = {
