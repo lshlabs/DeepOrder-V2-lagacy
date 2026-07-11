@@ -40,4 +40,3 @@ logs/
 .playwright-cli/
 AGENTS.md
 output
-docs

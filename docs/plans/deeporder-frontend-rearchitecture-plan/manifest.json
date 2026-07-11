@@ -1,0 +1,22 @@
+{
+  "root": "deeporder-frontend-rearchitecture-plan",
+  "files": [
+    "overview.md",
+    "phase-01.md",
+    "phase-02.md",
+    "phase-03.md",
+    "phase-04.md",
+    "phase-05.md",
+    "phase-06.md",
+    "phase-07.md",
+    "phase-08.md",
+    "phase-09.md",
+    "phase-10.md",
+    "phase-11.md",
+    "phase-12.md",
+    "phase-13.md",
+    "phase-14.md"
+  ],
+  "archive": "archive/",
+  "phase_count": 14
+}
