@@ -13,7 +13,6 @@
 }
 
 .kds-panel--staff,
-.kds-panel--stats,
 .kds-panel--settings {
   padding: 14px 16px;
 }
@@ -26,7 +25,6 @@
 }
 
 .kds-panel--staff,
-.kds-panel--stats,
 .kds-panel--settings {
   min-height: 0;
   overflow-x: hidden;
@@ -109,7 +107,6 @@
 }
 
 .kds-panel--staff .kds-panel-header,
-.kds-panel--stats .kds-panel-header,
 .kds-panel--settings .kds-panel-header {
   padding: 0 0 14px;
 }
@@ -121,7 +118,6 @@
 }
 
 .kds-panel--staff .kds-panel-empty,
-.kds-panel--stats .kds-panel-empty,
 .kds-panel--settings .kds-panel-empty {
   padding: 14px 0;
 }
@@ -149,7 +145,6 @@
 }
 
 .kds-panel--staff .kds-section-divider,
-.kds-panel--stats .kds-section-divider,
 .kds-panel--settings .kds-section-divider {
   padding: 14px 0;
 }

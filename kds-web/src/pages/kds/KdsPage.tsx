@@ -8,7 +8,7 @@ import { RemoveOrderDialog } from "@/features/kds/orders/components/RemoveOrderD
 import { ChangePasswordModal } from "@/features/settings/components/ChangePasswordModal";
 import { SettingsPanel } from "@/features/settings/components/SettingsPanel";
 import { StaffPanel } from "@/features/staff/components/StaffPanel";
-import { StatsPanel } from "@/features/kds/stats/components/StatsPanel";
+import { StatsPanel } from "@/features/stats/components/StatsPanel";
 import { MyTasksPanel } from "@/features/tasks/components/MyTasksPanel";
 import { ChatbotFab } from "@/features/support/components/ChatbotFab";
 import { SupportPanel } from "@/features/support/components/SupportPanel";
