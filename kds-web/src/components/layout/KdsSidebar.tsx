@@ -1,7 +1,7 @@
 import { BarChart2, ClipboardList, HelpCircle, Menu, Settings, Users, X } from "lucide-react";
 
-import type { AuthSession } from "../../../../types";
-import type { BoardTab } from "../../types";
+import type { AuthSession } from "@/types";
+import type { BoardTab } from "@/features/kds/types";
 import { KdsAccountMenu } from "./KdsAccountMenu";
 
 type KdsSidebarProps = {
@@ -45,7 +45,7 @@ export function KdsSidebar({
             {open ? <X size={16} aria-hidden="true" /> : <Menu size={16} aria-hidden="true" />}
             {open ? <span className="kds-sidebar-toggle-label">닫기</span> : null}
           </button>
- 
+
           <div className="kds-sidebar-nav">
             <button
               className={`kds-sidebar-item${(activeTab === "RECEIVED" || activeTab === "DONE" || activeTab === "MY_TASKS") ? " active" : ""}`}
