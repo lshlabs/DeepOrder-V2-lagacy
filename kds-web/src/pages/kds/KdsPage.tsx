@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import { ClearCompletedDialog } from "@/features/kds/orders/components/ClearCompletedDialog";
-import { OrderBoard } from "@/features/kds/orders/components/OrderBoard";
-import { OrderContextMenu } from "@/features/kds/orders/components/OrderContextMenu";
-import { OrderDetailModal } from "@/features/kds/orders/components/OrderDetailModal";
-import { RemoveOrderDialog } from "@/features/kds/orders/components/RemoveOrderDialog";
+import { ClearCompletedDialog } from "@/features/orders/components/ClearCompletedDialog";
+import { OrderBoard } from "@/features/orders/components/OrderBoard";
+import { OrderContextMenu } from "@/features/orders/components/OrderContextMenu";
+import { OrderDetailModal } from "@/features/orders/components/OrderDetailModal";
+import { RemoveOrderDialog } from "@/features/orders/components/RemoveOrderDialog";
 import { ChangePasswordModal } from "@/features/settings/components/ChangePasswordModal";
 import { SettingsPanel } from "@/features/settings/components/SettingsPanel";
 import { StaffPanel } from "@/features/staff/components/StaffPanel";
@@ -14,8 +14,8 @@ import { ChatbotFab } from "@/features/support/components/ChatbotFab";
 import { SupportPanel } from "@/features/support/components/SupportPanel";
 import { useAssignedMenus } from "@/features/tasks/hooks/useAssignedMenus";
 import { useKdsClock } from "@/lib/date/use-clock";
-import { useKdsOrders } from "@/features/kds/orders/hooks/useKdsOrders";
-import { useOrderOverlays } from "@/features/kds/orders/hooks/useOrderOverlays";
+import { useKdsOrders } from "@/features/orders/hooks/useKdsOrders";
+import { useOrderOverlays } from "@/features/orders/hooks/useOrderOverlays";
 import { useKdsSettings } from "@/features/settings/hooks/useKdsSettings";
 import { useStoreContext } from "@/features/store-status/hooks/useStoreContext";
 
@@ -176,7 +176,7 @@ export function KdsPage({ session, onLogout, onUnauthorized }: KdsPageProps) {
 
   const notice =
     counts.CANCELLED > 0 ? (
-      <div className="kds-notice-bar">
+      <div className="flex items-center justify-center bg-amber-500/10 px-4 py-2 text-[12px] font-semibold text-[var(--color-amber)]">
         취소 주문 {counts.CANCELLED}건은 보드에서 제외되어 집계로만 관리됩니다.
       </div>
     ) : null;

@@ -66,6 +66,10 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "kds-floating-in": {
+          from: { opacity: "0", transform: "scale(0.98)" },
+          to: { opacity: "1", transform: "scale(1)" },
+        },
         "chatbot-bounce": {
           "0%, 100%": { transform: "translateY(0)", opacity: "0.5" },
           "50%": { transform: "translateY(-4px)", opacity: "1" },
@@ -76,6 +80,7 @@ export default {
         },
       },
       animation: {
+        "kds-floating-in": "kds-floating-in 120ms ease-out",
         "chatbot-bounce": "chatbot-bounce 1.2s infinite ease-in-out",
         "chatbot-message-in": "chatbot-message-in 0.16s ease-out",
       },

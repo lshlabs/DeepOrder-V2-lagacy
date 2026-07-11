@@ -2,9 +2,8 @@
 
 ## 현재 상태
 
-- 문서 상태: `PENDING`
-- 확인 기준일: `2026-07-11`
-- 비고: orders 전환은 가장 후반 범위이며 아직 시작 전으로 간주한다.
+- 문서 상태: `DONE`
+- 확인 기준일: `2026-07-12`
 
 ## 목표
 
@@ -63,13 +62,36 @@ Phase 06~12 연속 실행 기준. 이 Phase는 가장 복잡하므로 orders 핵
 ## 완료 기록
 
 ```text
-상태:
-완료 일시:
-Git commit:
+상태: DONE
+완료 일시: 2026-07-12
+Git commit: (pending commit)
 이동/분리 파일:
+  신규: src/features/orders/lib/analysisHelpers.ts
+  신규: src/features/orders/lib/orderFormatters.ts
+  신규: src/features/orders/lib/orderSelectors.ts  (import 경로 수정)
+  신규: src/features/orders/lib/orderLayout.ts  (import 경로 수정)
+  신규: src/features/orders/hooks/useKdsOrders.ts  (import 경로 수정)
+  신규: src/features/orders/hooks/useOrderOverlays.ts  (import 경로 수정)
+  신규: src/features/orders/components/RequestPanel.tsx  (Tailwind 재작성)
+  신규: src/features/orders/components/ClearCompletedDialog.tsx  (AlertDialog)
+  신규: src/features/orders/components/RemoveOrderDialog.tsx  (AlertDialog)
+  신규: src/features/orders/components/OrderContextMenu.tsx  (Tailwind 재작성)
+  신규: src/features/orders/components/OrderDetailModal.tsx  (Dialog 재작성)
+  신규: src/features/orders/components/OrderCard.tsx  (Tailwind 재작성, progress bar inline style 허용)
+  신규: src/features/orders/components/OrderBoard.tsx  (Tailwind 재작성, pull-distance translateY 허용)
+  신규: src/features/orders/index.ts  (public API)
+  KdsPage.tsx: orders/hooks import를 kds/orders → orders로 교체,
+               kds-notice-bar → Tailwind inline 대체
 삭제 CSS:
+  src/features/kds/orders/orders.css  (삭제)
+  styles.css: orders.css import 제거
 Tailwind animation:
+  tailwind.config.js keyframes/animation: kds-floating-in 추가
 허용한 raw control/inline style:
+  OrderCard: --kds-progress-ratio 대신 linear-gradient inline style로 progress bar 구현
+  OrderBoard: pull-to-refresh translateY는 동적 거리값이므로 inline style 유지
 부분 검증:
-blocker:
+  - typecheck: PASS
+  - lint (features/orders + KdsPage): PASS
+blocker: none
 ```
