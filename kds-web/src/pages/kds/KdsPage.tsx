@@ -7,12 +7,12 @@ import { OrderDetailModal } from "@/features/kds/orders/components/OrderDetailMo
 import { RemoveOrderDialog } from "@/features/kds/orders/components/RemoveOrderDialog";
 import { ChangePasswordModal } from "@/features/settings/components/ChangePasswordModal";
 import { SettingsPanel } from "@/features/settings/components/SettingsPanel";
-import { StaffPanel } from "@/features/kds/staff/components/StaffPanel";
+import { StaffPanel } from "@/features/staff/components/StaffPanel";
 import { StatsPanel } from "@/features/kds/stats/components/StatsPanel";
-import { MyTasksPanel } from "@/features/kds/tasks/components/MyTasksPanel";
+import { MyTasksPanel } from "@/features/tasks/components/MyTasksPanel";
 import { ChatbotFab } from "@/features/kds/support/components/ChatbotFab";
 import { SupportPanel } from "@/features/kds/support/components/SupportPanel";
-import { useAssignedMenus } from "@/features/kds/tasks/hooks/useAssignedMenus";
+import { useAssignedMenus } from "@/features/tasks/hooks/useAssignedMenus";
 import { useKdsClock } from "@/lib/date/use-clock";
 import { useKdsOrders } from "@/features/kds/orders/hooks/useKdsOrders";
 import { useOrderOverlays } from "@/features/kds/orders/hooks/useOrderOverlays";

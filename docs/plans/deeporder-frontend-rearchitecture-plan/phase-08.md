@@ -2,9 +2,8 @@
 
 ## 현재 상태
 
-- 문서 상태: `PENDING`
-- 확인 기준일: `2026-07-11`
-- 비고: staff/tasks root feature 이동과 shared selector 제거는 아직 시작 전으로 간주한다.
+- 문서 상태: `DONE`
+- 확인 기준일: `2026-07-12`
 
 ## 목표
 
@@ -58,11 +57,26 @@ Phase 06~12 연속 실행 기준. 이 Phase에서는 CRUD와 접근 권한 smoke
 ## 완료 기록
 
 ```text
-상태:
-완료 일시:
-Git commit:
+상태: DONE
+완료 일시: 2026-07-12
+Git commit: (pending commit)
 이동 파일:
+  - src/features/kds/staff/components/StaffPanel.tsx
+      → src/features/staff/components/StaffPanel.tsx  (Tailwind/shadcn 재작성)
+  - src/features/kds/tasks/components/MyTasksPanel.tsx
+      → src/features/tasks/components/MyTasksPanel.tsx  (Tailwind/shadcn 재작성)
+  - src/features/kds/tasks/hooks/useAssignedMenus.ts
+      → src/features/tasks/hooks/useAssignedMenus.ts  (import 경로 수정)
+  신규: src/features/staff/index.ts
+  신규: src/features/tasks/index.ts
 제거 selector 범주:
+  - kds-shared.css: .kds-table--staff, .kds-table--history 모든 컬럼/폭/표시 규칙
+  - kds-shared.css: .kds-row-actions, .kds-row-actions-trigger, .kds-row-actions-menu,
+                    .kds-row-actions-item, .kds-table-actions-inline, .kds-table-action-label
+  - styles.css: staff.css, tasks.css import 제거
+  - pages/kds/KdsPage.tsx: 새 feature 경로로 import 교체
 부분 검증:
-blocker:
+  - typecheck: PASS (no errors)
+  - lint (new features + KdsPage): PASS (no errors)
+blocker: none
 ```
