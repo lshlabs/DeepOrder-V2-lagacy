@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Canonical shadcn/ui semantic tokens — Light theme
+ *
+ * Color values are expressed as HSL channels (no hsl() wrapper)
+ * so Tailwind can compose them with an alpha value:
+ *   hsl(var(--background) / <alpha-value>)
+ *
+ * Mapped from existing tokens.css values to preserve current visual design.
+ */
+@layer base {
+  :root {
+    /* background: #f4f5f7 → hsl(220 14% 96%) */
+    --background: 220 14% 96%;
+    /* foreground: #111318 → hsl(228 10% 15%) */
+    --foreground: 228 10% 15%;
+
+    /* card: #ffffff */
+    --card: 0 0% 100%;
+    --card-foreground: 228 10% 15%;
+
+    /* popover: #ffffff */
+    --popover: 0 0% 100%;
+    --popover-foreground: 228 10% 15%;
+
+    /* primary: warm orange #e8650a → hsl(26 93% 48%) */
+    --primary: 26 93% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    /* secondary: surface-2 #f4f5f7 */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 228 10% 15%;
+
+    /* muted: surface-3 #e8eaed → hsl(216 12% 92%) */
+    --muted: 216 12% 92%;
+    --muted-foreground: 220 9% 46%;
+
+    /* accent: same as primary — warm orange */
+    --accent: 26 93% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    /* destructive: #dc2626 → hsl(0 72% 51%) */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* success: #16a34a → hsl(142 71% 45%) */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* warning: #b45309 → hsl(32 96% 38%) */
+    --warning: 32 96% 38%;
+    --warning-foreground: 0 0% 100%;
+
+    /* border: rgba(0,0,0,0.09) approximation */
+    --border: 220 13% 91%;
+    /* input: same as surface */
+    --input: 220 13% 91%;
+    /* ring: primary orange */
+    --ring: 26 93% 48%;
+
+    /* radius: 8px → 0.5rem */
+    --radius: 0.5rem;
+
+    /* chart colors — use KDS status palette */
+    --chart-1: 26 93% 48%;
+    --chart-2: 142 71% 45%;
+    --chart-3: 32 96% 38%;
+    --chart-4: 0 72% 51%;
+    --chart-5: 220 9% 46%;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100vh;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
