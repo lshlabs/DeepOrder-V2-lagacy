@@ -38,6 +38,36 @@ import type {
   UpdateStoreStatusRequest,
 } from "../types";
 
+// [목업] 백엔드 미연결시 mock 데이터 사용. 제거시 이 import와 모든 mock fallback 코드 삭제.
+import {
+  mockArchiveCompletedOrders,
+  mockChangePassword,
+  mockCheckIdentifier,
+  mockCreateAssignedMenu,
+  mockCreateStaff,
+  mockDeleteAssignedMenu,
+  mockGetAssignedMenus,
+  mockGetCurrentUser,
+  mockGetKdsOrders,
+  mockGetKdsSettings,
+  mockGetStaff,
+  mockGetStoreContext,
+  mockHideOrder,
+  mockLogin,
+  mockLogout,
+  mockRefresh,
+  mockRegenerateStaffPin,
+  mockRegister,
+  mockUpdateAssignedMenu,
+  mockUpdateKdsSettings,
+  mockUpdateOrderItemOptionProgress,
+  mockUpdateOrderItemProgress,
+  mockUpdateOrderStatus as mockUpdateOrderStatus_,
+  mockUpdateStaff,
+  mockUpdateStaffActive,
+  mockUpdateStoreStatus,
+} from "./mock";
+
 const API_URL = import.meta.env.VITE_DEEPORDER_API_URL ?? "http://127.0.0.1:8000";
 export const API_ORIGIN = new URL(API_URL).origin;
 
@@ -52,173 +82,245 @@ export class ApiError extends Error {
 }
 
 export async function apiLogin(payload: LoginRequest) {
-  return request<AuthResponse>("/api/auth/login", {
-    method: "POST",
-    body: JSON.stringify(payload),
-  });
+  return withMockFallback(
+    () => request<AuthResponse>("/api/auth/login", {
+      method: "POST",
+      body: JSON.stringify(payload),
+    }),
+    mockLogin,
+  );
 }
 
 export async function apiRegister(payload: RegisterRequest) {
-  return request<RegisterResponse>("/api/auth/register", {
-    method: "POST",
-    body: JSON.stringify(payload),
-  });
+  return withMockFallback(
+    () => request<RegisterResponse>("/api/auth/register", {
+      method: "POST",
+      body: JSON.stringify(payload),
+    }),
+    mockRegister,
+  );
 }
 
 export async function apiCheckIdentifier(loginId: string) {
-  return request<IdentifierAvailabilityResponse>(
-    `/api/auth/check-identifier?loginId=${encodeURIComponent(loginId)}`,
+  return withMockFallback(
+    () => request<IdentifierAvailabilityResponse>(
+      `/api/auth/check-identifier?loginId=${encodeURIComponent(loginId)}`,
+    ),
+    mockCheckIdentifier,
   );
 }
 
 export async function apiRefresh(refreshToken: string) {
-  return request<RefreshResponse>("/api/auth/refresh", {
-    method: "POST",
-    body: JSON.stringify({ refreshToken }),
-  });
+  return withMockFallback(
+    () => request<RefreshResponse>("/api/auth/refresh", {
+      method: "POST",
+      body: JSON.stringify({ refreshToken }),
+    }),
+    mockRefresh,
+  );
 }
 
 export async function apiLogout(refreshToken: string) {
-  await request<void>("/api/auth/logout", {
-    method: "POST",
-    body: JSON.stringify({ refreshToken }),
-  });
+  await withMockFallback(
+    () => request<void>("/api/auth/logout", {
+      method: "POST",
+      body: JSON.stringify({ refreshToken }),
+    }),
+    mockLogout,
+  );
 }
 
 export async function apiGetCurrentUser(accessToken: string) {
-  return request<CurrentUserResponse>("/api/auth/me", {
-    headers: createAuthHeaders(accessToken),
-  });
+  return withMockFallback(
+    () => request<CurrentUserResponse>("/api/auth/me", {
+      headers: createAuthHeaders(accessToken),
+    }),
+    mockGetCurrentUser,
+  );
 }
 
 export async function apiChangePassword(accessToken: string, payload: ChangePasswordRequest) {
-  return request<ChangePasswordResponse>("/api/auth/change-password", {
-    method: "POST",
-    headers: createAuthHeaders(accessToken),
-    body: JSON.stringify(payload),
-  });
+  return withMockFallback(
+    () => request<ChangePasswordResponse>("/api/auth/change-password", {
+      method: "POST",
+      headers: createAuthHeaders(accessToken),
+      body: JSON.stringify(payload),
+    }),
+    mockChangePassword,
+  );
 }
 
 export async function apiGetKdsOrders(accessToken: string) {
-  return request<KdsOrdersResponse>("/api/kds/orders", {
-    headers: createAuthHeaders(accessToken),
-  });
+  return withMockFallback(
+    () => request<KdsOrdersResponse>("/api/kds/orders", {
+      headers: createAuthHeaders(accessToken),
+    }),
+    mockGetKdsOrders,
+  );
 }
 
 export async function apiGetStoreContext(accessToken: string) {
-  return request<KdsStoreContext>("/api/kds/store-context", {
-    headers: createAuthHeaders(accessToken),
-  });
+  return withMockFallback(
+    () => request<KdsStoreContext>("/api/kds/store-context", {
+      headers: createAuthHeaders(accessToken),
+    }),
+    mockGetStoreContext,
+  );
 }
 
 export async function apiUpdateStoreStatus(accessToken: string, payload: UpdateStoreStatusRequest) {
-  return request<KdsStoreContext>("/api/kds/store-context/status", {
-    method: "PATCH",
-    headers: createAuthHeaders(accessToken),
-    body: JSON.stringify(payload),
-  });
+  return withMockFallback(
+    () => request<KdsStoreContext>("/api/kds/store-context/status", {
+      method: "PATCH",
+      headers: createAuthHeaders(accessToken),
+      body: JSON.stringify(payload),
+    }),
+    () => mockUpdateStoreStatus(payload),
+  );
 }
 
 export async function apiGetKdsSettings(accessToken: string) {
-  return request<StoreSettings>("/api/kds/settings", {
-    headers: createAuthHeaders(accessToken),
-  });
+  return withMockFallback(
+    () => request<StoreSettings>("/api/kds/settings", {
+      headers: createAuthHeaders(accessToken),
+    }),
+    mockGetKdsSettings,
+  );
 }
 
 export async function apiUpdateKdsSettings(accessToken: string, payload: UpdateStoreSettingsRequest) {
-  return request<StoreSettings>("/api/kds/settings", {
-    method: "PATCH",
-    headers: createAuthHeaders(accessToken),
-    body: JSON.stringify(payload),
-  });
+  return withMockFallback(
+    () => request<StoreSettings>("/api/kds/settings", {
+      method: "PATCH",
+      headers: createAuthHeaders(accessToken),
+      body: JSON.stringify(payload),
+    }),
+    () => mockUpdateKdsSettings(payload),
+  );
 }
 
 export async function apiGetAssignedMenus(accessToken: string) {
-  return request<AssignedMenuListResponse>("/api/kds/my-tasks/menus", {
-    headers: createAuthHeaders(accessToken),
-  });
+  return withMockFallback(
+    () => request<AssignedMenuListResponse>("/api/kds/my-tasks/menus", {
+      headers: createAuthHeaders(accessToken),
+    }),
+    mockGetAssignedMenus,
+  );
 }
 
 export async function apiCreateAssignedMenu(accessToken: string, payload: CreateAssignedMenuRequest) {
-  return request<void>("/api/kds/my-tasks/menus", {
-    method: "POST",
-    headers: createAuthHeaders(accessToken),
-    body: JSON.stringify(payload),
-  });
+  return withMockFallback(
+    () => request<void>("/api/kds/my-tasks/menus", {
+      method: "POST",
+      headers: createAuthHeaders(accessToken),
+      body: JSON.stringify(payload),
+    }),
+    () => mockCreateAssignedMenu(payload.menuName),
+  );
 }
 
 export async function apiUpdateAssignedMenu(accessToken: string, menuId: number, payload: UpdateAssignedMenuRequest) {
-  return request<void>(`/api/kds/my-tasks/menus/${menuId}`, {
-    method: "PATCH",
-    headers: createAuthHeaders(accessToken),
-    body: JSON.stringify(payload),
-  });
+  return withMockFallback(
+    () => request<void>(`/api/kds/my-tasks/menus/${menuId}`, {
+      method: "PATCH",
+      headers: createAuthHeaders(accessToken),
+      body: JSON.stringify(payload),
+    }),
+    () => mockUpdateAssignedMenu(menuId, payload.menuName),
+  );
 }
 
 export async function apiDeleteAssignedMenu(accessToken: string, menuId: number) {
-  return request<void>(`/api/kds/my-tasks/menus/${menuId}`, {
-    method: "DELETE",
-    headers: createAuthHeaders(accessToken),
-  });
+  return withMockFallback(
+    () => request<void>(`/api/kds/my-tasks/menus/${menuId}`, {
+      method: "DELETE",
+      headers: createAuthHeaders(accessToken),
+    }),
+    () => mockDeleteAssignedMenu(menuId),
+  );
 }
 
 export async function apiGetStaff(accessToken: string) {
-  return request<StaffListResponse>("/api/kds/staff", {
-    headers: createAuthHeaders(accessToken),
-  });
+  return withMockFallback(
+    () => request<StaffListResponse>("/api/kds/staff", {
+      headers: createAuthHeaders(accessToken),
+    }),
+    mockGetStaff,
+  );
 }
 
 export async function apiCreateStaff(accessToken: string, payload: CreateStaffRequest) {
-  return request<StaffWithTemporaryPin>("/api/kds/staff", {
-    method: "POST",
-    headers: createAuthHeaders(accessToken),
-    body: JSON.stringify(payload),
-  });
+  return withMockFallback(
+    () => request<StaffWithTemporaryPin>("/api/kds/staff", {
+      method: "POST",
+      headers: createAuthHeaders(accessToken),
+      body: JSON.stringify(payload),
+    }),
+    () => mockCreateStaff(payload),
+  );
 }
 
 export async function apiUpdateStaff(accessToken: string, staffId: number, payload: UpdateStaffRequest) {
-  return request<Staff>(`/api/kds/staff/${staffId}`, {
-    method: "PATCH",
-    headers: createAuthHeaders(accessToken),
-    body: JSON.stringify(payload),
-  });
+  return withMockFallback(
+    () => request<Staff>(`/api/kds/staff/${staffId}`, {
+      method: "PATCH",
+      headers: createAuthHeaders(accessToken),
+      body: JSON.stringify(payload),
+    }),
+    () => mockUpdateStaff(staffId, payload),
+  );
 }
 
 export async function apiUpdateStaffActive(accessToken: string, staffId: number, payload: UpdateStaffActiveRequest) {
-  return request<Staff>(`/api/kds/staff/${staffId}/active`, {
-    method: "PATCH",
-    headers: createAuthHeaders(accessToken),
-    body: JSON.stringify(payload),
-  });
+  return withMockFallback(
+    () => request<Staff>(`/api/kds/staff/${staffId}/active`, {
+      method: "PATCH",
+      headers: createAuthHeaders(accessToken),
+      body: JSON.stringify(payload),
+    }),
+    () => mockUpdateStaffActive(staffId, payload),
+  );
 }
 
 export async function apiRegenerateStaffPin(accessToken: string, staffId: number) {
-  return request<RegenerateStaffPinResponse>(`/api/kds/staff/${staffId}/regenerate-pin`, {
-    method: "POST",
-    headers: createAuthHeaders(accessToken),
-  });
+  return withMockFallback(
+    () => request<RegenerateStaffPinResponse>(`/api/kds/staff/${staffId}/regenerate-pin`, {
+      method: "POST",
+      headers: createAuthHeaders(accessToken),
+    }),
+    () => mockRegenerateStaffPin(staffId),
+  );
 }
 
 export async function apiUpdateOrderStatus(accessToken: string, orderId: number, status: OrderStatus) {
-  return request<{ id: number; status: OrderStatus }>(`/api/orders/${orderId}/status`, {
-    method: "PATCH",
-    headers: createAuthHeaders(accessToken),
-    body: JSON.stringify({ status }),
-  });
+  return withMockFallback(
+    () => request<{ id: number; status: OrderStatus }>(`/api/orders/${orderId}/status`, {
+      method: "PATCH",
+      headers: createAuthHeaders(accessToken),
+      body: JSON.stringify({ status }),
+    }),
+    () => mockUpdateOrderStatus_(orderId, status),
+  );
 }
 
 export async function apiHideOrder(accessToken: string, orderId: number) {
-  return request<HideOrderResponse>(`/api/kds/orders/${orderId}/hide`, {
-    method: "PATCH",
-    headers: createAuthHeaders(accessToken),
-  });
+  return withMockFallback(
+    () => request<HideOrderResponse>(`/api/kds/orders/${orderId}/hide`, {
+      method: "PATCH",
+      headers: createAuthHeaders(accessToken),
+    }),
+    () => mockHideOrder(orderId),
+  );
 }
 
 export async function apiArchiveCompletedOrders(accessToken: string) {
-  return request<ArchiveCompletedOrdersResponse>("/api/kds/orders/archive-completed", {
-    method: "POST",
-    headers: createAuthHeaders(accessToken),
-  });
+  return withMockFallback(
+    () => request<ArchiveCompletedOrdersResponse>("/api/kds/orders/archive-completed", {
+      method: "POST",
+      headers: createAuthHeaders(accessToken),
+    }),
+    mockArchiveCompletedOrders,
+  );
 }
 
 export async function apiUpdateOrderItemProgress(
@@ -226,11 +328,14 @@ export async function apiUpdateOrderItemProgress(
   orderItemId: number,
   payload: UpdateOrderItemProgressRequest,
 ) {
-  return request<OrderItemProgressResponse>(`/api/kds/order-items/${orderItemId}/progress`, {
-    method: "PATCH",
-    headers: createAuthHeaders(accessToken),
-    body: JSON.stringify(payload),
-  });
+  return withMockFallback(
+    () => request<OrderItemProgressResponse>(`/api/kds/order-items/${orderItemId}/progress`, {
+      method: "PATCH",
+      headers: createAuthHeaders(accessToken),
+      body: JSON.stringify(payload),
+    }),
+    () => mockUpdateOrderItemProgress(orderItemId, payload),
+  );
 }
 
 export async function apiUpdateOrderItemOptionProgress(
@@ -239,11 +344,14 @@ export async function apiUpdateOrderItemOptionProgress(
   optionIndex: number,
   payload: UpdateOrderItemProgressRequest,
 ) {
-  return request<OrderItemProgressResponse>(`/api/kds/order-items/${orderItemId}/options/${optionIndex}/progress`, {
-    method: "PATCH",
-    headers: createAuthHeaders(accessToken),
-    body: JSON.stringify(payload),
-  });
+  return withMockFallback(
+    () => request<OrderItemProgressResponse>(`/api/kds/order-items/${orderItemId}/options/${optionIndex}/progress`, {
+      method: "PATCH",
+      headers: createAuthHeaders(accessToken),
+      body: JSON.stringify(payload),
+    }),
+    () => mockUpdateOrderItemOptionProgress(orderItemId, optionIndex, payload),
+  );
 }
 
 export async function apiCreateSupportConversation(
@@ -373,6 +481,19 @@ export async function apiCloseSupportConversation(accessToken: string, conversat
     method: "POST",
     headers: createAuthHeaders(accessToken),
   });
+}
+
+// [목업] TypeError(fetch 실패) 발생시 mock fallback 호출. 제거시 삭제.
+async function withMockFallback<T>(realCall: () => Promise<T>, mockCall: () => Promise<T>): Promise<T> {
+  try {
+    return await realCall();
+  } catch (error) {
+    if (error instanceof TypeError && error.message?.includes("fetch")) {
+      console.warn("[Mock] 백엔드 연결 실패, mock 데이터 사용");
+      return mockCall();
+    }
+    throw error;
+  }
 }
 
 function createAuthHeaders(accessToken: string) {
