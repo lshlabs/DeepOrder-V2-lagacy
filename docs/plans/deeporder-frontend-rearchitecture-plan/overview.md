@@ -34,7 +34,7 @@
 ## 현재 상태 요약
 
 - 기준일: 2026-07-11
-- 현재 작업 중 Phase: `Phase 05`
+- 현재 작업 중 Phase: `Phase 06`
 - 이번 세션에서 실제 중단 지점까지 확인한 Phase: `Phase 05`
 - `Phase 01~04`는 실제 코드 기준으로 빠르게 재판정했다.
   - `Phase 01`: `PENDING`
@@ -167,8 +167,8 @@ kds-web/
 | 02 | `phase-02.md` | Tailwind 전역 진입점, semantic token, alias 정상화 | PENDING |
 | 03 | `phase-03.md` | shadcn primitive와 공통 block 계층 구축 | PENDING |
 | 04 | `phase-04.md` | app/pages/layout 골격과 KDS shell 분리 | PENDING |
-| 05 | `phase-05.md` | 인증 도메인 구조 및 `auth.css` 제거 | IN_PROGRESS |
-| 06 | `phase-06.md` | layout, store-status, toast/floating 전환 | PENDING |
+| 05 | `phase-05.md` | 인증 도메인 구조 및 `auth.css` 제거 | DONE |
+| 06 | `phase-06.md` | layout, store-status, toast/floating 전환 | IN_PROGRESS |
 | 07 | `phase-07.md` | settings 전환 및 Ant Design 제거 | PENDING |
 | 08 | `phase-08.md` | staff/tasks 전환 및 shared table selector 축소 | PENDING |
 | 09 | `phase-09.md` | support/chatbot 전환 및 `support.css` 제거 | PENDING |

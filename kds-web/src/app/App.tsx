@@ -1,139 +1,30 @@
-import { useEffect, useState } from "react";
-
-import {
-  ApiError,
-  apiCloseSupportConversation,
-  apiGetCurrentSupportConversation,
-  apiGetCurrentUser,
-  apiLogout,
-  apiRefresh,
-} from "@/lib/api";
-import { clearStoredTokens, loadStoredTokens, saveAccessToken, saveStoredTokens } from "@/lib/auth";
-import { clearChatbotSession } from "@/features/kds/support/hooks/useChatbotSession";
+import { useAuthSession } from "@/features/auth";
 import { AuthPage } from "@/pages/auth/AuthPage";
 import { KdsPage } from "@/pages/kds/KdsPage";
-import type { AuthResponse, AuthSession, CurrentUserResponse, RegisterResponse } from "@/types";
 
 export default function App() {
-  const [booting, setBooting] = useState(true);
-  const [session, setSession] = useState<AuthSession | null>(null);
-  const [registeredPending, setRegisteredPending] = useState<RegisterResponse | null>(null);
-  const [bootError, setBootError] = useState<string | null>(null);
+  const {
+    state,
+    registeredPending,
+    handleLoginSuccess,
+    handleRegisterSuccess,
+    handleLogout,
+    handleBackFromPending,
+    reauthorize,
+  } = useAuthSession();
 
-  useEffect(() => {
-    // bootstrapSession is intentionally called once on mount.
-    // Adding it to deps would cause re-render loops.
-    void bootstrapSession();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  async function bootstrapSession() {
-    const tokens = loadStoredTokens();
-    if (!tokens.accessToken) {
-      setBooting(false);
-      return;
-    }
-
-    try {
-      const current = await apiGetCurrentUser(tokens.accessToken);
-      setSession(createSession(current, tokens.accessToken, tokens.refreshToken ?? "", tokens.storage === "local"));
-      setRegisteredPending(null);
-      setBootError(null);
-    } catch (error) {
-      if (error instanceof ApiError && error.status === 401 && tokens.refreshToken) {
-        const nextAccessToken = await reauthorize(tokens.refreshToken);
-        if (nextAccessToken) {
-          return;
-        }
-      }
-      clearStoredTokens();
-      setSession(null);
-      setBootError(error instanceof Error ? error.message : "세션을 복원하지 못했습니다.");
-    } finally {
-      setBooting(false);
-    }
-  }
-
-  async function reauthorize(overrideRefreshToken?: string) {
-    const refreshToken = overrideRefreshToken ?? loadStoredTokens().refreshToken;
-    if (!refreshToken) {
-      clearStoredTokens();
-      setSession(null);
-      setRegisteredPending(null);
-      return null;
-    }
-
-    try {
-      const refreshed = await apiRefresh(refreshToken);
-      const persistent = session?.autoLogin ?? loadStoredTokens().storage === "local";
-      saveAccessToken(refreshed.accessToken, persistent ? "local" : "session");
-      const current = await apiGetCurrentUser(refreshed.accessToken);
-      setSession(createSession(current, refreshed.accessToken, refreshToken, persistent));
-      setBootError(null);
-      return refreshed.accessToken;
-    } catch {
-      clearStoredTokens();
-      setSession(null);
-      setRegisteredPending(null);
-      return null;
-    }
-  }
-
-  function handleLoginSuccess(response: AuthResponse) {
-    saveStoredTokens(response.accessToken, response.refreshToken, response.autoLogin);
-    setSession({
-      accessToken: response.accessToken,
-      refreshToken: response.refreshToken,
-      autoLogin: response.autoLogin,
-      user: response.user,
-      store: response.store,
-    });
-    setRegisteredPending(null);
-    setBootError(null);
-  }
-
-  function handleRegisterSuccess(response: RegisterResponse) {
-    clearStoredTokens();
-    setSession(null);
-    setRegisteredPending(response);
-    setBootError(null);
-  }
-
-  async function handleLogout() {
-    const accessToken = session?.accessToken ?? loadStoredTokens().accessToken;
-    const refreshToken = session?.refreshToken ?? loadStoredTokens().refreshToken;
-    try {
-      if (accessToken) {
-        await closeActiveSupportConversationBestEffort(accessToken);
-      }
-      if (refreshToken) {
-        await apiLogout(refreshToken);
-      }
-    } catch {
-      // Logout should clear the local session even if best-effort server cleanup fails.
-    } finally {
-      clearStoredTokens();
-      clearChatbotSession();
-      setSession(null);
-      setRegisteredPending(null);
-    }
-  }
-
-  function handleBackFromPending() {
-    clearStoredTokens();
-    setSession(null);
-    setRegisteredPending(null);
-    setBootError(null);
-  }
-
-  if (booting) {
+  if (state.status === "booting") {
     return (
-      <main className="auth-shell">
-        <section className="status-card">
-          <p className="eyebrow">AUTH SESSION</p>
-          <h1>세션 확인 중</h1>
-          <p className="auth-copy">저장된 토큰을 확인하고 매장 계정 상태를 복원하고 있습니다.</p>
-        </section>
+      <main className="flex items-center justify-center min-h-screen bg-background">
+        <div className="flex flex-col gap-6 w-full max-w-sm border border-border rounded-xl bg-card p-6 md:p-10">
+          <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
+            Auth Session
+          </p>
+          <h1 className="text-xl font-semibold tracking-tight text-foreground">세션 확인 중</h1>
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            저장된 토큰을 확인하고 매장 계정 상태를 복원하고 있습니다.
+          </p>
+        </div>
       </main>
     );
   }
@@ -149,51 +40,39 @@ export default function App() {
     );
   }
 
-  if (!session) {
+  if (state.status === "unauthenticated") {
     return (
       <>
-        {bootError ? <div className="boot-banner error">{bootError}</div> : null}
+        {state.error ? (
+          <div
+            className="fixed top-4 left-4 z-20 max-w-sm rounded-md border border-destructive/20 bg-destructive/10 px-3 py-2 text-sm text-destructive"
+            role="alert"
+          >
+            {state.error}
+          </div>
+        ) : null}
         <AuthPage onLoginSuccess={handleLoginSuccess} onRegisterSuccess={handleRegisterSuccess} />
       </>
     );
   }
 
-  if (session.user.approvalStatus !== "APPROVED") {
+  if (state.status === "pending") {
     return (
       <AuthPage
         onLoginSuccess={handleLoginSuccess}
         onRegisterSuccess={handleRegisterSuccess}
-        pendingInfo={{ user: session.user, store: session.store }}
+        pendingInfo={{ user: state.session.user, store: state.session.store }}
         onBackFromPending={handleBackFromPending}
       />
     );
   }
 
-  return <KdsPage onLogout={handleLogout} onUnauthorized={reauthorize} session={session} />;
-}
-
-async function closeActiveSupportConversationBestEffort(accessToken: string) {
-  try {
-    const current = await apiGetCurrentSupportConversation(accessToken);
-    if (current) {
-      await apiCloseSupportConversation(accessToken, current.id);
-    }
-  } catch {
-    // Support close is best-effort and must not block logout.
-  }
-}
-
-function createSession(
-  current: CurrentUserResponse,
-  accessToken: string,
-  refreshToken: string,
-  autoLogin: boolean,
-): AuthSession {
-  return {
-    accessToken,
-    refreshToken,
-    autoLogin,
-    user: current.user,
-    store: current.store,
-  };
+  // status === "authenticated"
+  return (
+    <KdsPage
+      onLogout={handleLogout}
+      onUnauthorized={reauthorize}
+      session={state.session}
+    />
+  );
 }

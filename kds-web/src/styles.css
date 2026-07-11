@@ -1,6 +1,5 @@
 @import "./styles/tokens.css";
 @import "./styles/base.css";
-@import "./pages/auth.css";
 @import "./features/kds/layout/kds-layout.css";
 @import "./features/kds/store-status/store-status.css";
 @import "./features/kds/layout/kds-actions.css";

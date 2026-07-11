@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 
-import { ApiError } from "@/lib/api";
 import { clearChatbotSession } from "@/features/kds/support/hooks/useChatbotSession";
 import {
+  ApiError,
   apiGetCurrentUser,
   apiLogout,
   apiRefresh,
   apiCloseSupportConversation,
   apiGetCurrentSupportConversation,
-} from "@/lib/api";
+} from "../api/auth-api";
 import {
   clearStoredTokens,
   loadStoredTokens,
   saveAccessToken,
   saveStoredTokens,
-} from "@/lib/auth";
+} from "../lib/auth-storage";
 import type {
   AuthResponse,
   AuthSession,

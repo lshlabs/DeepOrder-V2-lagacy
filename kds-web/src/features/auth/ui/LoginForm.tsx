@@ -14,7 +14,7 @@ const AUTO_LOGIN_KEY = "deeporder.kds.autoLogin";
 const defaultForm: LoginRequest = { loginId: "", password: "", autoLogin: false };
 
 interface LoginFormProps {
-  loginIdRef?: React.RefObject<HTMLInputElement>;
+  loginIdRef?: React.RefObject<HTMLInputElement | null>;
   onSuccess: (response: AuthResponse) => void;
 }
 

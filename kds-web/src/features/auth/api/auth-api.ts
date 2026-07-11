@@ -11,4 +11,6 @@ export {
   apiRefresh,
   apiLogout,
   apiGetCurrentUser,
+  apiGetCurrentSupportConversation,
+  apiCloseSupportConversation,
 } from "@/lib/api";
