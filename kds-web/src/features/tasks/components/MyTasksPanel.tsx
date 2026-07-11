@@ -7,7 +7,7 @@ import {
   parseApiTimestamp,
 } from "../../kds/orders/lib/orderFormatters";
 import { ActionMenu } from "@/components/layout/ActionMenu";
-import type { AssignedMenu, Order } from "../../../types";
+import type { AssignedMenu, Order } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {

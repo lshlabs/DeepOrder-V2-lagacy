@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 
 import { apiGetStoreContext, apiUpdateStoreStatus } from "@/lib/api";
-import { requestWithReauth } from "@/shared/lib/requestWithReauth";
-import type { KdsStoreContext } from "@/types";
-import type { StoreStatus } from "@/features/kds/types";
+import { requestWithReauth } from "@/lib/requestWithReauth";
+import type { KdsStoreContext } from "@/lib/types";
+import type { StoreStatus } from "@/lib/kds-types";
 import type { ShowToast } from "@/lib/notify";
 
 type UseStoreContextParams = {

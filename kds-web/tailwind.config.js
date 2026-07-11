@@ -5,9 +5,6 @@ const hslVar = (name) => `hsl(var(${name}) / <alpha-value>)`;
 export default {
   darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
-  corePlugins: {
-    preflight: false,
-  },
   theme: {
     extend: {
       colors: {

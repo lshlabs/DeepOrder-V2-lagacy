@@ -6,8 +6,8 @@ import {
   apiGetAssignedMenus,
   apiUpdateAssignedMenu,
 } from "../../../lib/api";
-import { requestWithReauth } from "../../../shared/lib/requestWithReauth";
-import type { AssignedMenu } from "../../../types";
+import { requestWithReauth } from "@/lib/requestWithReauth";
+import type { AssignedMenu } from "@/lib/types";
 import type { ShowToast } from "@/lib/notify";
 
 

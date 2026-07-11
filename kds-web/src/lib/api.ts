@@ -36,7 +36,7 @@ import type {
   UpdateAssignedMenuRequest,
   UpdateStoreSettingsRequest,
   UpdateStoreStatusRequest,
-} from "../types";
+} from "@/lib/types";
 
 // [목업] 백엔드 미연결시 mock 데이터 사용. 제거시 이 import와 모든 mock fallback 코드 삭제.
 import {

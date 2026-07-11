@@ -1,28 +1,13 @@
-import { useState } from "react";
-
+import { KdsSectionRenderer } from "@/app/kds/KdsSectionRenderer";
+import { useKdsWorkspace } from "@/app/kds/model/use-kds-workspace";
 import { ClearCompletedDialog } from "@/features/orders/components/ClearCompletedDialog";
-import { OrderBoard } from "@/features/orders/components/OrderBoard";
 import { OrderContextMenu } from "@/features/orders/components/OrderContextMenu";
 import { OrderDetailModal } from "@/features/orders/components/OrderDetailModal";
 import { RemoveOrderDialog } from "@/features/orders/components/RemoveOrderDialog";
 import { ChangePasswordModal } from "@/features/settings/components/ChangePasswordModal";
-import { SettingsPanel } from "@/features/settings/components/SettingsPanel";
-import { StaffPanel } from "@/features/staff/components/StaffPanel";
-import { StatsPanel } from "@/features/stats/components/StatsPanel";
-import { MyTasksPanel } from "@/features/tasks/components/MyTasksPanel";
-import { ChatbotFab } from "@/features/support/components/ChatbotFab";
-import { SupportPanel } from "@/features/support/components/SupportPanel";
-import { useAssignedMenus } from "@/features/tasks/hooks/useAssignedMenus";
-import { useKdsClock } from "@/lib/date/use-clock";
-import { useKdsOrders } from "@/features/orders/hooks/useKdsOrders";
-import { useOrderOverlays } from "@/features/orders/hooks/useOrderOverlays";
-import { useKdsSettings } from "@/features/settings/hooks/useKdsSettings";
-import { useStoreContext } from "@/features/store-status/hooks/useStoreContext";
-
-import { notify } from "@/lib/notify";
 import { KdsShell } from "@/components/layout/KdsShell";
-import type { AuthSession } from "@/types";
-import type { BoardTab } from "@/features/kds/types";
+import { notify } from "@/lib/notify";
+import type { AuthSession } from "@/lib/types";
 
 type KdsPageProps = {
   session: AuthSession;
@@ -31,273 +16,105 @@ type KdsPageProps = {
 };
 
 export function KdsPage({ session, onLogout, onUnauthorized }: KdsPageProps) {
-  const [loggingOut, setLoggingOut] = useState(false);
-  const [activeTab, setActiveTab] = useState<BoardTab>("RECEIVED");
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [clearDoneConfirm, setClearDoneConfirm] = useState(false);
-  const [pwModal, setPwModal] = useState(false);
-  const now = useKdsClock();
-  const {
-    archiveCompletedOrders,
-    archivingCompleted,
-    boardOrders,
-    counts,
-    cycleOrderItem,
-    cycleOrderItemOption,
-    doneOrders,
-    hideOrder,
-    hidingOrderId,
-    loading,
-    newOrderSignal,
-    orderSortDirection,
-    orders,
-    receivedOrders,
-    refreshOrders,
-    refreshing,
-    runManualRefresh,
-    setOrderSortDirection,
-    updateOrderStatus,
-    updatingOrderId,
-    updatingOrderItemId,
-  } = useKdsOrders({
-    accessToken: session.accessToken,
-    onUnauthorized,
-    showToast: notify,
-  });
-  const {
-    assignedMenus,
-    createAssignedMenu,
-    deleteAssignedMenu,
-    loading: assignedMenusLoading,
-    refreshAssignedMenus,
-    saving: assignedMenusSaving,
-    updateAssignedMenu,
-  } = useAssignedMenus({
-    accessToken: session.accessToken,
-    onUnauthorized,
-    showToast: notify,
-  });
-  const {
-    loading: storeSettingsLoading,
-    refreshSettings,
-    saving: savingSettings,
-    settings,
-    updateSettings,
-  } = useKdsSettings({
-    accessToken: session.accessToken,
-    onUnauthorized,
-    showToast: notify,
-  });
-  const {
-    changeStoreStatus,
-    confirmStoreStatusChange,
-    pauseMinutes,
-    refreshStoreContext,
-    revertPendingPausedStatus,
-    savingStoreStatus,
-    setPauseMinutes,
-    storeStatus,
-  } = useStoreContext({
-    accessToken: session.accessToken,
-    onUnauthorized,
-    showToast: notify,
-  });
-  const {
-    activeOrders,
-    cancelRemoveOrder,
-    closeContextMenu,
-    closeOrderDetail,
-    confirmRemoveOrder,
-    contextMenu,
-    contextOrder,
-    openContextMenu,
-    openOrderDetail,
-    openRemoveOrder,
-    pinnedOrderIds,
-    removeOrderId,
-    selectedOrder,
-    togglePinnedOrder,
-  } = useOrderOverlays({
-    activeTab,
-    doneOrders,
-    hideOrder,
-    orders,
-    receivedOrders,
-  });
-
-  async function handleLogout() {
-    setLoggingOut(true);
-    try {
-      await onLogout();
-    } finally {
-      setLoggingOut(false);
-    }
-  }
-
-  function openChangePasswordModal() {
-    setPwModal(true);
-  }
-
-  function handleRefreshAll() {
-    return runManualRefresh(() =>
-      Promise.all([
-        refreshOrders(),
-        refreshStoreContext(),
-        refreshSettings(),
-        refreshAssignedMenus(),
-      ]).then(() => undefined)
-    );
-  }
-
-  function handleTopbarTabChange(tab: BoardTab) {
-    setActiveTab(tab);
-    if (
-      tab === "MY_TASKS" ||
-      tab === "STAFF" ||
-      tab === "STATS" ||
-      tab === "SETTINGS" ||
-      tab === "RECEIVED" ||
-      tab === "SUPPORT"
-    ) {
-      setSidebarOpen(false);
-    }
-  }
-
-  function handleConfirmClearCompleted() {
-    void archiveCompletedOrders().then((success) => {
-      if (success) {
-        setClearDoneConfirm(false);
-      }
-    });
-  }
-
-  const isManager = session.user.accountType !== "EMPLOYEE";
-  const settingsDisabled = storeSettingsLoading || savingSettings;
+  const ws = useKdsWorkspace({ session, onUnauthorized });
 
   const notice =
-    counts.CANCELLED > 0 ? (
+    ws.orders.counts.CANCELLED > 0 ? (
       <div className="flex items-center justify-center bg-amber-500/10 px-4 py-2 text-[12px] font-semibold text-[var(--color-amber)]">
-        취소 주문 {counts.CANCELLED}건은 보드에서 제외되어 집계로만 관리됩니다.
+        취소 주문 {ws.orders.counts.CANCELLED}건은 보드에서 제외되어 집계로만 관리됩니다.
       </div>
     ) : null;
 
   return (
     <>
       <KdsShell
-        activeOrderCount={counts.NEW + counts.COOKING}
-        activeTab={activeTab}
-        archivingCompleted={archivingCompleted}
-        doneCount={doneOrders.length}
-        isManager={isManager}
-        loading={loading}
-        loggingOut={loggingOut}
+        activeOrderCount={ws.orders.counts.NEW + ws.orders.counts.COOKING}
+        activeTab={ws.activeTab}
+        archivingCompleted={ws.orders.archivingCompleted}
+        doneCount={ws.orders.doneOrders.length}
+        isManager={ws.isManager}
+        loading={ws.orders.loading}
+        loggingOut={ws.loggingOut}
         notice={notice}
-        orderSortDirection={orderSortDirection}
-        pauseMinutes={pauseMinutes}
-        receivedCount={receivedOrders.length}
-        refreshing={refreshing}
-        savingStoreStatus={savingStoreStatus}
+        orderSortDirection={ws.orders.orderSortDirection}
+        pauseMinutes={ws.storeState.pauseMinutes}
+        receivedCount={ws.orders.receivedOrders.length}
+        refreshing={ws.orders.refreshing}
+        savingStoreStatus={ws.storeState.savingStoreStatus}
         session={session}
-        sidebarOpen={sidebarOpen}
-        storeStatus={storeStatus}
-        onArchiveClick={() => setClearDoneConfirm(true)}
-        onCancelPendingPaused={revertPendingPausedStatus}
-        onConfirmPaused={confirmStoreStatusChange}
-        onLogout={handleLogout}
-        onPauseMinutesChange={(updater) => setPauseMinutes(updater)}
-        onRefresh={handleRefreshAll}
-        onSidebarOpenChange={setSidebarOpen}
+        sidebarOpen={ws.sidebarOpen}
+        storeStatus={ws.storeState.storeStatus}
+        onArchiveClick={() => ws.setClearDoneConfirm(true)}
+        onCancelPendingPaused={ws.storeState.revertPendingPausedStatus}
+        onConfirmPaused={ws.storeState.confirmStoreStatusChange}
+        onLogout={() => ws.handleLogout(onLogout)}
+        onPauseMinutesChange={ws.storeState.setPauseMinutes}
+        onRefresh={ws.handleRefreshAll}
+        onSidebarOpenChange={ws.setSidebarOpen}
         onSortToggle={() =>
-          setOrderSortDirection(
-            orderSortDirection === "newest-first" ? "oldest-first" : "newest-first",
+          ws.setOrderSortDirection(
+            ws.orders.orderSortDirection === "newest-first" ? "oldest-first" : "newest-first",
           )
         }
-        onStatusChange={changeStoreStatus}
-        onTabChange={handleTopbarTabChange}
+        onStatusChange={ws.storeState.changeStoreStatus}
+        onTabChange={ws.handleTopbarTabChange}
       >
-        {activeTab === "MY_TASKS" ? (
-          <div className="kds-panel-shell">
-            <MyTasksPanel
-              assignedMenus={assignedMenus}
-              loading={assignedMenusLoading}
-              now={now}
-              onCreateAssignedMenu={createAssignedMenu}
-              onDeleteAssignedMenu={deleteAssignedMenu}
-              onUpdateAssignedMenu={updateAssignedMenu}
-              orders={boardOrders}
-              saving={assignedMenusSaving}
-            />
-          </div>
-        ) : activeTab === "STAFF" && isManager ? (
-          <div className="kds-panel-shell">
-            <StaffPanel onUnauthorized={onUnauthorized} session={session} />
-          </div>
-        ) : activeTab === "STATS" ? (
-          <StatsPanel orders={orders} />
-        ) : activeTab === "SETTINGS" ? (
-          <div className="kds-panel-shell">
-            <SettingsPanel
-              settings={settings}
-              onUpdate={updateSettings}
-              onChangePasswordClick={openChangePasswordModal}
-              disabled={settingsDisabled}
-            />
-          </div>
-        ) : activeTab === "SUPPORT" ? (
-          <div className="kds-panel-shell">
-            <SupportPanel />
-            <ChatbotFab />
-          </div>
-        ) : (
-          <OrderBoard
-            orders={activeOrders}
-            pinnedOrderIds={pinnedOrderIds}
-            loading={loading}
-            newOrderSignal={newOrderSignal}
-            now={now}
-            refreshing={refreshing}
-            updatingOrderId={updatingOrderId}
-            updatingItemId={updatingOrderItemId}
-            emptyMessage={activeTab === "RECEIVED" ? "접수된 주문이 없습니다" : "완료된 주문이 없습니다"}
-            onRefresh={handleRefreshAll}
-            onUpdateStatus={updateOrderStatus}
-            onCycleItem={cycleOrderItem}
-            onCycleItemOption={cycleOrderItemOption}
-            onOpenContextMenu={openContextMenu}
-          />
-        )}
+        <KdsSectionRenderer
+          activeTab={ws.activeTab}
+          assignedMenusState={ws.assignedMenusState}
+          handleRefreshAll={ws.handleRefreshAll}
+          isManager={ws.isManager}
+          now={ws.now}
+          openChangePasswordModal={ws.openChangePasswordModal}
+          orders={ws.orders}
+          overlays={ws.overlays}
+          session={session}
+          onUnauthorized={onUnauthorized}
+          settingsDisabled={ws.settingsDisabled}
+          settingsState={ws.settingsState}
+        />
       </KdsShell>
 
       <OrderContextMenu
-        canPin={contextOrder?.status === "NEW" || contextOrder?.status === "COOKING"}
-        contextMenu={contextMenu}
-        isPinned={contextMenu ? pinnedOrderIds.includes(contextMenu.orderId) : false}
-        onClose={closeContextMenu}
-        onOpenDetail={openOrderDetail}
-        onOpenRemove={openRemoveOrder}
-        onTogglePinned={togglePinnedOrder}
+        canPin={
+          ws.overlays.contextOrder?.status === "NEW" ||
+          ws.overlays.contextOrder?.status === "COOKING"
+        }
+        contextMenu={ws.overlays.contextMenu}
+        isPinned={
+          ws.overlays.contextMenu
+            ? ws.overlays.pinnedOrderIds.includes(ws.overlays.contextMenu.orderId)
+            : false
+        }
+        onClose={ws.overlays.closeContextMenu}
+        onOpenDetail={ws.overlays.openOrderDetail}
+        onOpenRemove={ws.overlays.openRemoveOrder}
+        onTogglePinned={ws.overlays.togglePinnedOrder}
       />
 
-      <OrderDetailModal order={selectedOrder} onClose={closeOrderDetail} />
+      <OrderDetailModal order={ws.overlays.selectedOrder} onClose={ws.overlays.closeOrderDetail} />
 
       <RemoveOrderDialog
-        open={removeOrderId !== null}
-        submitting={removeOrderId !== null && hidingOrderId === removeOrderId}
-        onCancel={cancelRemoveOrder}
-        onConfirm={confirmRemoveOrder}
+        open={ws.overlays.removeOrderId !== null}
+        submitting={
+          ws.overlays.removeOrderId !== null &&
+          ws.orders.hidingOrderId === ws.overlays.removeOrderId
+        }
+        onCancel={ws.overlays.cancelRemoveOrder}
+        onConfirm={ws.overlays.confirmRemoveOrder}
       />
 
       <ClearCompletedDialog
-        open={clearDoneConfirm}
-        submitting={archivingCompleted}
-        onCancel={() => setClearDoneConfirm(false)}
-        onConfirm={handleConfirmClearCompleted}
+        open={ws.clearDoneConfirm}
+        submitting={ws.orders.archivingCompleted}
+        onCancel={() => ws.setClearDoneConfirm(false)}
+        onConfirm={ws.handleConfirmClearCompleted}
       />
 
       <ChangePasswordModal
         accessToken={session.accessToken}
-        open={pwModal}
-        onClose={() => setPwModal(false)}
+        open={ws.pwModal}
+        onClose={() => ws.setPwModal(false)}
         onLogout={onLogout}
         onUnauthorized={onUnauthorized}
         showToast={notify}

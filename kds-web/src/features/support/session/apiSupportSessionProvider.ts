@@ -12,7 +12,7 @@ import {
   apiSendSupportMessage,
 } from "../../../lib/api";
 import { loadStoredAccessToken } from "../../../lib/auth";
-import type { SupportConversationResponse, SupportMessageResponse } from "../../../types";
+import type { SupportConversationResponse, SupportMessageResponse } from "@/lib/types";
 import type {
   ChatMessage,
   ChatbotSessionState,

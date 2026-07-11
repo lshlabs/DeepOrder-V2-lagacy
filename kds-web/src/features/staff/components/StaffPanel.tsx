@@ -9,8 +9,8 @@ import {
   apiUpdateStaffActive,
 } from "../../../lib/api";
 import { ActionMenu } from "@/components/layout/ActionMenu";
-import { requestWithReauth } from "../../../shared/lib/requestWithReauth";
-import type { AuthSession, Staff } from "../../../types";
+import { requestWithReauth } from "@/lib/requestWithReauth";
+import type { AuthSession, Staff } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {

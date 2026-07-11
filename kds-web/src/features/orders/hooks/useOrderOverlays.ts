@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
-import type { Order } from "../../../types";
-import type { BoardTab } from "@/features/kds/types";
+import type { Order } from "@/lib/types";
+import type { BoardTab } from "@/lib/kds-types";
 
 type OrderContextMenuState = {
   orderId: number;

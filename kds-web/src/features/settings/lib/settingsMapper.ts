@@ -1,5 +1,5 @@
-import type { StoreSettings } from "@/types";
-import type { SettingsState, SoundOption } from "@/features/kds/types";
+import type { StoreSettings } from "@/lib/types";
+import type { SettingsState, SoundOption } from "@/lib/kds-types";
 
 export function mapApiSettingsToUi(settings: StoreSettings): SettingsState {
   return {

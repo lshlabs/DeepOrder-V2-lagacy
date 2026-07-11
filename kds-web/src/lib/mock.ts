@@ -33,7 +33,7 @@ import type {
   UpdateStaffRequest,
   UpdateOrderItemProgressRequest,
   UpdateStoreSettingsRequest,
-} from "../types";
+} from "@/lib/types";
 
 export const MOCK_ACCESS_TOKEN = "mock-access-token";
 export const MOCK_REFRESH_TOKEN = "mock-refresh-token";

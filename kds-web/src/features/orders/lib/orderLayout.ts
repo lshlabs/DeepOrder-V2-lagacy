@@ -1,5 +1,5 @@
-import type { Order } from "../../../types";
-import type { OrderLayoutColumn } from "@/features/kds/types";
+import type { Order } from "@/lib/types";
+import type { OrderLayoutColumn } from "@/lib/kds-types";
 
 export const ORDER_CARD_STACK_GAP_PX = 10;
 export const ORDER_CARD_SHORT_RATIO = 0.58;

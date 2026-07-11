@@ -10,7 +10,7 @@ import {
   getElapsedMinutes,
   getOrderTypeLabel,
 } from "../lib/orderFormatters";
-import type { Order, OrderStatus } from "../../../types";
+import type { Order, OrderStatus } from "@/lib/types";
 import { RequestPanel } from "./RequestPanel";
 
 type OrderCardProps = {

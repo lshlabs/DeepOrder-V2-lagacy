@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
-import type { AuthSession } from "@/types";
-import type { BoardTab, OrderSortDirection, StoreStatus } from "@/features/kds/types";
+import type { AuthSession } from "@/lib/types";
+import type { BoardTab, OrderSortDirection, StoreStatus } from "@/lib/kds-types";
 import { KdsSidebar } from "./KdsSidebar";
 import { KdsTopbar } from "./KdsTopbar";
 

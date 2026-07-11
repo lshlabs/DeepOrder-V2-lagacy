@@ -1,4 +1,4 @@
-import { localSupportSessionProvider } from "../features/kds/support/session/localSupportSessionProvider";
+import { localSupportSessionProvider } from "@/features/support/session/localSupportSessionProvider";
 
 const ACCESS_TOKEN_KEY = "deeporder.accessToken";
 const REFRESH_TOKEN_KEY = "deeporder.refreshToken";

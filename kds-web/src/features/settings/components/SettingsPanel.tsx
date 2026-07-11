@@ -1,4 +1,4 @@
-import type { SettingsState, SoundOption } from "@/features/kds/types";
+import type { SettingsState, SoundOption } from "@/lib/kds-types";
 
 const SOUND_OPTIONS: { value: SoundOption; label: string }[] = [
   { value: "none", label: "없음" },

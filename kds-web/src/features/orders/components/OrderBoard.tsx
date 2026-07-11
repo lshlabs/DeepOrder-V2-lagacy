@@ -3,7 +3,7 @@ import { ArrowDown, Check, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 import { buildOrderLayoutColumns } from "../lib/orderLayout";
-import type { Order, OrderStatus } from "../../../types";
+import type { Order, OrderStatus } from "@/lib/types";
 import { OrderCard } from "./OrderCard";
 
 type OrderBoardProps = {

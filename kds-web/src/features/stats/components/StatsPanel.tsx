@@ -1,4 +1,4 @@
-import type { Order } from "../../../types";
+import type { Order } from "@/lib/types";
 
 type StatsPanelProps = {
   orders: Order[];

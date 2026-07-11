@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 import { getActionTone } from "../lib/analysisHelpers";
-import type { OrderAIAnalysis } from "../../../types";
+import type { OrderAIAnalysis } from "@/lib/types";
 
 type RequestPanelProps = {
   analysis: OrderAIAnalysis | null;

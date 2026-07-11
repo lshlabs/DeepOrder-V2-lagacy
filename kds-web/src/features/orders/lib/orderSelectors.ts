@@ -1,5 +1,5 @@
-import type { Order } from "../../../types";
-import type { OrderSortDirection } from "@/features/kds/types";
+import type { Order } from "@/lib/types";
+import type { OrderSortDirection } from "@/lib/kds-types";
 import { parseApiTimestamp } from "./orderFormatters";
 
 export function getVisibleOrders(orders: Order[]): Order[] {

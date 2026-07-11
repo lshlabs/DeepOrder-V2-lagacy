@@ -1,4 +1,4 @@
-import type { AnalysisAction, OrderAIAnalysis } from "../../../types";
+import type { AnalysisAction, OrderAIAnalysis } from "@/lib/types";
 
 export function getActionTone(action: AnalysisAction) {
   if (action.type === "ALLERGY" || action.type === "SAFETY_CHECK" || action.severity === "HIGH") return "danger";

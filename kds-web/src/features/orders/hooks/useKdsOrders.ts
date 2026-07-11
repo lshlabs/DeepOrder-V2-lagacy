@@ -15,9 +15,9 @@ import {
   getReceivedOrders,
   getVisibleOrders,
 } from "../lib/orderSelectors";
-import { requestWithReauth } from "../../../shared/lib/requestWithReauth";
-import type { Order, OrderStatus } from "../../../types";
-import type { OrderSortDirection } from "@/features/kds/types";
+import { requestWithReauth } from "@/lib/requestWithReauth";
+import type { Order, OrderStatus } from "@/lib/types";
+import type { OrderSortDirection } from "@/lib/kds-types";
 import type { ShowToast } from "@/lib/notify";
 
 const POLLING_INTERVAL_MS = 3000;

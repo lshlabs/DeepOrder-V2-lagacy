@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 
 import { apiGetKdsSettings, apiUpdateKdsSettings } from "@/lib/api";
-import { requestWithReauth } from "@/shared/lib/requestWithReauth";
+import { requestWithReauth } from "@/lib/requestWithReauth";
 import { mapApiSettingsToUi, mapUiSettingsToApi } from "../lib/settingsMapper";
-import { DEFAULT_SETTINGS_STATE, type SettingsState } from "@/features/kds/types";
+import { DEFAULT_SETTINGS_STATE, type SettingsState } from "@/lib/kds-types";
 import type { ShowToast } from "@/lib/notify";
 
 type UseKdsSettingsParams = {

@@ -3,7 +3,7 @@ import type { KeyboardEvent } from "react";
 import { Minus, Plus } from "lucide-react";
 
 import { PopoverPanel } from "@/components/layout/PopoverPanel";
-import type { StoreStatus } from "@/features/kds/types";
+import type { StoreStatus } from "@/lib/kds-types";
 import { StoreStatusDot } from "./StoreStatusDot";
 
 type StoreStatusControlProps = {

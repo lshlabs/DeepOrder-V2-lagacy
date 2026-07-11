@@ -1,7 +1,7 @@
 import { BarChart2, ClipboardList, HelpCircle, Menu, Settings, Users, X } from "lucide-react";
 
-import type { AuthSession } from "@/types";
-import type { BoardTab } from "@/features/kds/types";
+import type { AuthSession } from "@/lib/types";
+import type { BoardTab } from "@/lib/kds-types";
 import { KdsAccountMenu } from "./KdsAccountMenu";
 
 type KdsSidebarProps = {

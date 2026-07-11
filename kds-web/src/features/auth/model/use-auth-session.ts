@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { clearChatbotSession } from "@/features/kds/support/hooks/useChatbotSession";
+import { clearChatbotSession } from "@/features/support/hooks/useChatbotSession";
 import {
   ApiError,
   apiGetCurrentUser,

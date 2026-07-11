@@ -10,7 +10,7 @@ import {
   formatDetailTime,
   getOrderTypeLabel,
 } from "../lib/orderFormatters";
-import type { Order } from "../../../types";
+import type { Order } from "@/lib/types";
 
 type OrderDetailModalProps = {
   order: Order | null;

@@ -1,4 +1,4 @@
-import { ApiError } from "../../lib/api";
+import { ApiError } from "./api";
 
 export async function requestWithReauth<T>(
   accessToken: string,

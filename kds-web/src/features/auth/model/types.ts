@@ -12,4 +12,4 @@ export type {
   RegisterRequest,
   CurrentUserResponse,
   ApprovalStatus,
-} from "@/types";
+} from "@/lib/types";

@@ -4,7 +4,7 @@ import { AuthShell } from "@/features/auth/ui/AuthShell";
 import { LoginForm } from "@/features/auth/ui/LoginForm";
 import { SignupForm } from "@/features/auth/ui/SignupForm";
 import { ApprovalPendingView } from "@/features/auth/ui/ApprovalPendingView";
-import type { AuthResponse, AuthStore, AuthUser, RegisterResponse } from "@/types";
+import type { AuthResponse, AuthStore, AuthUser, RegisterResponse } from "@/lib/types";
 
 type AuthPageProps = {
   onLoginSuccess: (response: AuthResponse) => void;
