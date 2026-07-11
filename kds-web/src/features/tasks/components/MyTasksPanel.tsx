@@ -5,7 +5,7 @@ import {
   getElapsedMinutes,
   normalizeAssignedMenuName,
   parseApiTimestamp,
-} from "../../kds/orders/lib/orderFormatters";
+} from "@/lib/order-formatters";
 import { ActionMenu } from "@/components/layout/ActionMenu";
 import type { AssignedMenu, Order } from "@/lib/types";
 import { Button } from "@/components/ui/button";

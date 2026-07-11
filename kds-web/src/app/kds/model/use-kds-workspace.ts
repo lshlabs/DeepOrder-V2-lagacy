@@ -68,8 +68,8 @@ export function useKdsWorkspace({ session, onUnauthorized }: UseKdsWorkspaceOpti
     }
   }
 
-  function handleRefreshAll() {
-    return orders.runManualRefresh(() =>
+  async function handleRefreshAll() {
+    await orders.runManualRefresh(() =>
       Promise.all([
         orders.refreshOrders(),
         storeState.refreshStoreContext(),

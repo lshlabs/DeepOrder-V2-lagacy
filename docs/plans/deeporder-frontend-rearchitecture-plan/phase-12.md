@@ -2,9 +2,8 @@
 
 ## 현재 상태
 
-- 문서 상태: `PENDING`
-- 확인 기준일: `2026-07-11`
-- 비고: `src/shared`, `src/features/kds`, `src/types` 해체는 아직 시작 전으로 간주한다.
+- 문서 상태: `DONE`
+- 확인 기준일: `2026-07-12`
 
 ## 목표
 
@@ -73,15 +72,33 @@ rg -n "kds-shared\.css" src
 ## 완료 기록
 
 ```text
-상태:
-완료 일시:
-Git commit:
+상태: DONE
+완료 일시: 2026-07-12
+Git commit: (pending commit)
 삭제 디렉터리:
+  src/features/kds/ (layout/ 포함 전체 삭제)
+  src/shared/ (빈 디렉터리, git에서 자동 제거)
+  src/types/ (빈 디렉터리, git에서 자동 제거)
 type 이동 목록:
+  src/types/index.ts → src/lib/types.ts (@/types → @/lib/types 전체 교체)
+  src/features/kds/types.ts → src/lib/kds-types.ts (@/features/kds/types → @/lib/kds-types 전체 교체)
 shared 파일 이동 목록:
-KdsPage 최종 줄 수:
-deep import 검사:
-npm run check:
+  src/shared/lib/requestWithReauth.ts → src/lib/requestWithReauth.ts
+    (internal ApiError import 경로 수정: ../../lib/api → ./api)
+cross-feature 분리:
+  src/lib/order-formatters.ts 신규 (parseApiTimestamp, getElapsedMinutes, normalizeAssignedMenuName)
+  features/orders/lib/orderFormatters.ts: 위 3개 함수를 lib에서 re-export
+  features/tasks/MyTasksPanel.tsx: @/features/orders/lib → @/lib/order-formatters
+orchestration 추출:
+  src/app/kds/model/use-kds-workspace.ts (hooks 조합 + 파생 state)
+  src/app/kds/KdsSectionRenderer.tsx (tab별 패널 렌더링 분기)
+  src/pages/kds/KdsPage.tsx: 125줄로 슬림화
+KdsPage 최종 줄 수: 125
+deep import 검사: @/features/auth/ui/* 는 auth feature 내부 구조이므로 허용
+npm run check: PASS (tsc --noEmit)
 통합 검증:
-blocker:
+  - src/features/kds/ 없음
+  - kds-shared.css 참조 없음
+  - .css import main.tsx 1개만 존재
+blocker: none
 ```

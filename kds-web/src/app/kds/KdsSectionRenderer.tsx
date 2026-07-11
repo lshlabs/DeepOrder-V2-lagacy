@@ -12,7 +12,7 @@ import type { useKdsWorkspace } from "./model/use-kds-workspace";
 type KdsSectionRendererProps = {
   activeTab: BoardTab;
   isManager: boolean;
-  now: Date;
+  now: number;
   session: AuthSession;
   onUnauthorized: () => Promise<string | null>;
   openChangePasswordModal: () => void;
@@ -21,7 +21,7 @@ type KdsSectionRendererProps = {
   settingsState: ReturnType<typeof useKdsWorkspace>["settingsState"];
   overlays: ReturnType<typeof useKdsWorkspace>["overlays"];
   settingsDisabled: boolean;
-  handleRefreshAll: () => void;
+  handleRefreshAll: () => Promise<void>;
 };
 
 export function KdsSectionRenderer({

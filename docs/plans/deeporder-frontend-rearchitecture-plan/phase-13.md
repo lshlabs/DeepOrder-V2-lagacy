@@ -2,9 +2,8 @@
 
 ## 현재 상태
 
-- 문서 상태: `PENDING`
-- 확인 기준일: `2026-07-11`
-- 비고: legacy CSS 최종 삭제와 preflight 활성화는 후반 마감 단계로 아직 시작 전이다.
+- 문서 상태: `DONE`
+- 확인 기준일: `2026-07-12`
 
 ## 목표
 
@@ -61,14 +60,25 @@ rg -n "from ['\"]antd|antd/dist/reset.css|\.ant-" src package.json
 ## 완료 기록
 
 ```text
-상태:
-완료 일시:
-Git commit:
+상태: DONE
+완료 일시: 2026-07-12
+Git commit: (pending commit)
 최종 CSS 목록:
+  src/app/styles/globals.css (1개)
+  - @layer base: tokens + base reset + kds-layout + @keyframes
+  - @layer components: kds-panel-shell, kds-panel, kds-table, kds-badge, kds-settings-*, kds-segmented 등
 삭제 파일:
-삭제 dependency:
+  src/styles.css
+  src/styles/tokens.css
+  src/styles/base.css
+  src/features/kds/layout/kds-layout.css
+  (main.tsx: ./styles.css import 제거)
+삭제 dependency: 없음 (antd는 phase 범위 밖)
+preflight: false 제거: tailwind.config.js에서 corePlugins.preflight:false 블록 삭제
 legacy 검색 결과:
-npm run check:
-회귀 검증:
-blocker:
+  kds-panel-shell, kds-panel--settings: globals.css @layer components에 정의됨 (정상)
+  --color-/* 토큰 참조: 165개 (globals.css :root에 정의됨, 정상)
+npm run check: PASS (tsc --noEmit)
+회귀 검증: typecheck PASS, lint PASS
+blocker: none
 ```

@@ -1,17 +1,12 @@
 import type { Dayjs } from "dayjs";
 
-export function parseApiTimestamp(timestamp: string) {
-  if (/[zZ]$|[+-]\d{2}:\d{2}$/.test(timestamp)) {
-    return new Date(timestamp);
-  }
-  return new Date(`${timestamp}Z`);
-}
+import { parseApiTimestamp } from "@/lib/order-formatters";
 
-export function getElapsedMinutes(now: number, timestamp: string) {
-  const start = parseApiTimestamp(timestamp).getTime();
-  if (Number.isNaN(start)) return 0;
-  return Math.floor((now - start) / 60000);
-}
+export {
+  getElapsedMinutes,
+  normalizeAssignedMenuName,
+  parseApiTimestamp,
+} from "@/lib/order-formatters";
 
 export function formatElapsedLabel(now: number, timestamp: string) {
   const start = parseApiTimestamp(timestamp).getTime();
@@ -62,10 +57,6 @@ export function formatDeliveryAddress(address: {
   if (baseAddress === "***" || detail === "***") return "***";
   if (!baseAddress) return "-";
   return detail ? `${baseAddress} ${detail}` : baseAddress;
-}
-
-export function normalizeAssignedMenuName(value: string) {
-  return value.trim().toLowerCase().split(/\s+/).join(" ");
 }
 
 export function diffMinutesWithinDay(start: Dayjs, end: Dayjs) {
