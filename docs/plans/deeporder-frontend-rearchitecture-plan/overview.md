@@ -34,7 +34,7 @@
 ## 현재 상태 요약
 
 - 기준일: 2026-07-11
-- 현재 작업 중 Phase: `Phase 07`
+- 현재 작업 중 Phase: `Phase 08`
 - 이번 세션에서 실제 중단 지점까지 확인한 Phase: `Phase 05`
 - `Phase 01~04`는 실제 코드 기준으로 빠르게 재판정했다.
   - `Phase 01`: `PENDING`
@@ -169,8 +169,8 @@ kds-web/
 | 04 | `phase-04.md` | app/pages/layout 골격과 KDS shell 분리 | PENDING |
 | 05 | `phase-05.md` | 인증 도메인 구조 및 `auth.css` 제거 | DONE |
 | 06 | `phase-06.md` | layout, store-status, toast/floating 전환 | DONE |
-| 07 | `phase-07.md` | settings 전환 및 Ant Design 제거 | IN_PROGRESS |
-| 08 | `phase-08.md` | staff/tasks 전환 및 shared table selector 축소 | PENDING |
+| 07 | `phase-07.md` | settings 전환 및 Ant Design 제거 | DONE |
+| 08 | `phase-08.md` | staff/tasks 전환 및 shared table selector 축소 | IN_PROGRESS |
 | 09 | `phase-09.md` | support/chatbot 전환 및 `support.css` 제거 | PENDING |
 | 10 | `phase-10.md` | stats 전환 및 scoped reset/CSS 제거 | PENDING |
 | 11 | `phase-11.md` | orders 전환 및 `orders.css` 제거 | PENDING |
