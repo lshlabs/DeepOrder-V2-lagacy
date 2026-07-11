@@ -65,6 +65,20 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      keyframes: {
+        "chatbot-bounce": {
+          "0%, 100%": { transform: "translateY(0)", opacity: "0.5" },
+          "50%": { transform: "translateY(-4px)", opacity: "1" },
+        },
+        "chatbot-message-in": {
+          from: { opacity: "0", transform: "translateY(4px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        "chatbot-bounce": "chatbot-bounce 1.2s infinite ease-in-out",
+        "chatbot-message-in": "chatbot-message-in 0.16s ease-out",
+      },
     },
   },
   plugins: [],

@@ -34,8 +34,8 @@
 ## 현재 상태 요약
 
 - 기준일: 2026-07-12
-- 현재 작업 중 Phase: `Phase 09`
-- 이번 세션에서 실제 완료된 Phase: `Phase 08`
+- 현재 작업 중 Phase: `Phase 10`
+- 이번 세션에서 실제 완료된 Phase: `Phase 08`, `Phase 09`
 - `Phase 01~04`는 실제 코드 기준으로 빠르게 재판정했다.
   - `Phase 01`: `PENDING`
   - `Phase 02`: `PENDING`
@@ -171,7 +171,7 @@ kds-web/
 | 06 | `phase-06.md` | layout, store-status, toast/floating 전환 | DONE |
 | 07 | `phase-07.md` | settings 전환 및 Ant Design 제거 | DONE |
 | 08 | `phase-08.md` | staff/tasks 전환 및 shared table selector 축소 | DONE |
-| 09 | `phase-09.md` | support/chatbot 전환 및 `support.css` 제거 | PENDING |
+| 09 | `phase-09.md` | support/chatbot 전환 및 `support.css` 제거 | DONE |
 | 10 | `phase-10.md` | stats 전환 및 scoped reset/CSS 제거 | PENDING |
 | 11 | `phase-11.md` | orders 전환 및 `orders.css` 제거 | PENDING |
 | 12 | `phase-12.md` | shared/types 해체, public API, app orchestration 완성 | PENDING |
