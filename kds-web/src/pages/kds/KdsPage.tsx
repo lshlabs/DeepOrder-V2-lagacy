@@ -1,29 +1,28 @@
 import { useState } from "react";
 
-import { ClearCompletedDialog } from "../features/kds/orders/components/ClearCompletedDialog";
-import { OrderBoard } from "../features/kds/orders/components/OrderBoard";
-import { OrderContextMenu } from "../features/kds/orders/components/OrderContextMenu";
-import { OrderDetailModal } from "../features/kds/orders/components/OrderDetailModal";
-import { RemoveOrderDialog } from "../features/kds/orders/components/RemoveOrderDialog";
-import { KdsToast } from "../shared/components/KdsToast";
-import { KdsSidebar } from "../features/kds/layout/components/KdsSidebar";
-import { ChangePasswordModal } from "../features/kds/settings/components/ChangePasswordModal";
-import { KdsTopbar } from "../features/kds/layout/components/KdsTopbar";
-import { SettingsPanel } from "../features/kds/settings/components/SettingsPanel";
-import { StaffPanel } from "../features/kds/staff/components/StaffPanel";
-import { StatsPanel } from "../features/kds/stats/components/StatsPanel";
-import { MyTasksPanel } from "../features/kds/tasks/components/MyTasksPanel";
-import { ChatbotFab } from "../features/kds/support/components/ChatbotFab";
-import { SupportPanel } from "../features/kds/support/components/SupportPanel";
-import { useAssignedMenus } from "../features/kds/tasks/hooks/useAssignedMenus";
-import { useKdsClock } from "../shared/hooks/useKdsClock";
-import { useKdsOrders } from "../features/kds/orders/hooks/useKdsOrders";
-import { useOrderOverlays } from "../features/kds/orders/hooks/useOrderOverlays";
-import { useKdsSettings } from "../features/kds/settings/hooks/useKdsSettings";
-import { useStoreContext } from "../features/kds/store-status/hooks/useStoreContext";
-import { useToast } from "../shared/hooks/useToast";
-import type { AuthSession } from "../types";
-import type { BoardTab } from "../features/kds/types";
+import { ClearCompletedDialog } from "@/features/kds/orders/components/ClearCompletedDialog";
+import { OrderBoard } from "@/features/kds/orders/components/OrderBoard";
+import { OrderContextMenu } from "@/features/kds/orders/components/OrderContextMenu";
+import { OrderDetailModal } from "@/features/kds/orders/components/OrderDetailModal";
+import { RemoveOrderDialog } from "@/features/kds/orders/components/RemoveOrderDialog";
+import { KdsToast } from "@/shared/components/KdsToast";
+import { ChangePasswordModal } from "@/features/kds/settings/components/ChangePasswordModal";
+import { SettingsPanel } from "@/features/kds/settings/components/SettingsPanel";
+import { StaffPanel } from "@/features/kds/staff/components/StaffPanel";
+import { StatsPanel } from "@/features/kds/stats/components/StatsPanel";
+import { MyTasksPanel } from "@/features/kds/tasks/components/MyTasksPanel";
+import { ChatbotFab } from "@/features/kds/support/components/ChatbotFab";
+import { SupportPanel } from "@/features/kds/support/components/SupportPanel";
+import { useAssignedMenus } from "@/features/kds/tasks/hooks/useAssignedMenus";
+import { useKdsClock } from "@/shared/hooks/useKdsClock";
+import { useKdsOrders } from "@/features/kds/orders/hooks/useKdsOrders";
+import { useOrderOverlays } from "@/features/kds/orders/hooks/useOrderOverlays";
+import { useKdsSettings } from "@/features/kds/settings/hooks/useKdsSettings";
+import { useStoreContext } from "@/features/kds/store-status/hooks/useStoreContext";
+import { useToast } from "@/shared/hooks/useToast";
+import { KdsShell } from "@/components/layout/KdsShell";
+import type { AuthSession } from "@/types";
+import type { BoardTab } from "@/features/kds/types";
 
 type KdsPageProps = {
   session: AuthSession;
@@ -153,7 +152,14 @@ export function KdsPage({ session, onLogout, onUnauthorized }: KdsPageProps) {
 
   function handleTopbarTabChange(tab: BoardTab) {
     setActiveTab(tab);
-    if (tab === "MY_TASKS" || tab === "STAFF" || tab === "STATS" || tab === "SETTINGS" || tab === "RECEIVED" || tab === "SUPPORT") {
+    if (
+      tab === "MY_TASKS" ||
+      tab === "STAFF" ||
+      tab === "STATS" ||
+      tab === "SETTINGS" ||
+      tab === "RECEIVED" ||
+      tab === "SUPPORT"
+    ) {
       setSidebarOpen(false);
     }
   }
@@ -169,48 +175,47 @@ export function KdsPage({ session, onLogout, onUnauthorized }: KdsPageProps) {
   const isManager = session.user.accountType !== "EMPLOYEE";
   const settingsDisabled = storeSettingsLoading || savingSettings;
 
+  const notice =
+    counts.CANCELLED > 0 ? (
+      <div className="kds-notice-bar">
+        취소 주문 {counts.CANCELLED}건은 보드에서 제외되어 집계로만 관리됩니다.
+      </div>
+    ) : null;
+
   return (
-    <div className="kds-shell">
-      <KdsSidebar
+    <>
+      <KdsShell
         activeOrderCount={counts.NEW + counts.COOKING}
         activeTab={activeTab}
+        archivingCompleted={archivingCompleted}
+        doneCount={doneOrders.length}
         isManager={isManager}
+        loading={loading}
         loggingOut={loggingOut}
-        open={sidebarOpen}
+        notice={notice}
+        orderSortDirection={orderSortDirection}
+        pauseMinutes={pauseMinutes}
+        receivedCount={receivedOrders.length}
+        refreshing={refreshing}
+        savingStoreStatus={savingStoreStatus}
         session={session}
+        sidebarOpen={sidebarOpen}
+        storeStatus={storeStatus}
+        onArchiveClick={() => setClearDoneConfirm(true)}
+        onCancelPendingPaused={revertPendingPausedStatus}
+        onConfirmPaused={confirmStoreStatusChange}
         onLogout={handleLogout}
-        onOpenChange={setSidebarOpen}
-        onTabChange={setActiveTab}
-      />
-
-      <div className="kds-main">
-        <KdsTopbar
-          activeTab={activeTab}
-          archivingCompleted={archivingCompleted}
-          doneCount={doneOrders.length}
-          loading={loading}
-          orderSortDirection={orderSortDirection}
-          pauseMinutes={pauseMinutes}
-          receivedCount={receivedOrders.length}
-          refreshing={refreshing}
-          savingStoreStatus={savingStoreStatus}
-          storeStatus={storeStatus}
-          onArchiveClick={() => setClearDoneConfirm(true)}
-          onCancelPendingPaused={revertPendingPausedStatus}
-          onConfirmPaused={confirmStoreStatusChange}
-          onPauseMinutesChange={(updater) => setPauseMinutes(updater)}
-          onRefresh={handleRefreshAll}
-          onSortToggle={() => setOrderSortDirection(
+        onPauseMinutesChange={(updater) => setPauseMinutes(updater)}
+        onRefresh={handleRefreshAll}
+        onSidebarOpenChange={setSidebarOpen}
+        onSortToggle={() =>
+          setOrderSortDirection(
             orderSortDirection === "newest-first" ? "oldest-first" : "newest-first",
-          )}
-          onStatusChange={changeStoreStatus}
-          onTabChange={handleTopbarTabChange}
-        />
-
-        {counts.CANCELLED > 0 ? (
-          <div className="kds-notice-bar">취소 주문 {counts.CANCELLED}건은 보드에서 제외되어 집계로만 관리됩니다.</div>
-        ) : null}
-
+          )
+        }
+        onStatusChange={changeStoreStatus}
+        onTabChange={handleTopbarTabChange}
+      >
         {activeTab === "MY_TASKS" ? (
           <div className="kds-panel-shell">
             <MyTasksPanel
@@ -262,7 +267,7 @@ export function KdsPage({ session, onLogout, onUnauthorized }: KdsPageProps) {
             onOpenContextMenu={openContextMenu}
           />
         )}
-      </div>
+      </KdsShell>
 
       <OrderContextMenu
         canPin={contextOrder?.status === "NEW" || contextOrder?.status === "COOKING"}
@@ -274,10 +279,7 @@ export function KdsPage({ session, onLogout, onUnauthorized }: KdsPageProps) {
         onTogglePinned={togglePinnedOrder}
       />
 
-      <OrderDetailModal
-        order={selectedOrder}
-        onClose={closeOrderDetail}
-      />
+      <OrderDetailModal order={selectedOrder} onClose={closeOrderDetail} />
 
       <RemoveOrderDialog
         open={removeOrderId !== null}
@@ -303,6 +305,6 @@ export function KdsPage({ session, onLogout, onUnauthorized }: KdsPageProps) {
       />
 
       <KdsToast toast={toast} onClose={hideToast} />
-    </div>
+    </>
   );
 }

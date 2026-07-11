@@ -7,12 +7,12 @@ import {
   apiGetCurrentUser,
   apiLogout,
   apiRefresh,
-} from "./lib/api";
-import { clearStoredTokens, loadStoredTokens, saveAccessToken, saveStoredTokens } from "./lib/auth";
-import { clearChatbotSession } from "./features/kds/support/hooks/useChatbotSession";
-import { AuthPage } from "./pages/AuthPage";
-import { KdsPage } from "./pages/KdsPage";
-import type { AuthResponse, AuthSession, CurrentUserResponse, RegisterResponse } from "./types";
+} from "@/lib/api";
+import { clearStoredTokens, loadStoredTokens, saveAccessToken, saveStoredTokens } from "@/lib/auth";
+import { clearChatbotSession } from "@/features/kds/support/hooks/useChatbotSession";
+import { AuthPage } from "@/pages/auth/AuthPage";
+import { KdsPage } from "@/pages/kds/KdsPage";
+import type { AuthResponse, AuthSession, CurrentUserResponse, RegisterResponse } from "@/types";
 
 export default function App() {
   const [booting, setBooting] = useState(true);

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { ClockArrowDown, ClockArrowUp, Menu, RefreshCw, Trash2, X } from "lucide-react";
 
-import type { BoardTab, OrderSortDirection, StoreStatus } from "../../types";
-import { StoreStatusControl } from "../../store-status/components/StoreStatusControl";
+import type { BoardTab, OrderSortDirection, StoreStatus } from "@/features/kds/types";
+import { StoreStatusControl } from "@/features/kds/store-status/components/StoreStatusControl";
 
 type KdsTopbarProps = {
   activeTab: BoardTab;
@@ -229,7 +229,7 @@ export function KdsTopbar({
             {fabOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
           </button>
         </div>
-        ) : null}
+      ) : null}
     </>
   );
 }
