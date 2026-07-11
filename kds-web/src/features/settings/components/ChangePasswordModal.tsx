@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 import { X } from "lucide-react";
 
-import { apiChangePassword } from "../../../../lib/api";
-import { requestWithReauth } from "../../../../shared/lib/requestWithReauth";
-import type { ShowToast } from "../../../../shared/hooks/useToast";
+import { apiChangePassword } from "@/lib/api";
+import { requestWithReauth } from "@/shared/lib/requestWithReauth";
+import type { ShowToast } from "@/lib/notify";
 
 type ChangePasswordModalProps = {
   accessToken: string;

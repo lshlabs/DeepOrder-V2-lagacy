@@ -2,8 +2,8 @@ import { useEffect, useId, useRef, useState } from "react";
 import type { KeyboardEvent } from "react";
 import { Minus, Plus } from "lucide-react";
 
-import { PopoverPanel } from "../../../../shared/components/floating/PopoverPanel";
-import type { StoreStatus } from "../../types";
+import { PopoverPanel } from "@/components/layout/PopoverPanel";
+import type { StoreStatus } from "@/features/kds/types";
 import { StoreStatusDot } from "./StoreStatusDot";
 
 type StoreStatusControlProps = {

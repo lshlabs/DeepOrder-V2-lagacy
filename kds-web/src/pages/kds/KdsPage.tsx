@@ -5,21 +5,21 @@ import { OrderBoard } from "@/features/kds/orders/components/OrderBoard";
 import { OrderContextMenu } from "@/features/kds/orders/components/OrderContextMenu";
 import { OrderDetailModal } from "@/features/kds/orders/components/OrderDetailModal";
 import { RemoveOrderDialog } from "@/features/kds/orders/components/RemoveOrderDialog";
-import { KdsToast } from "@/shared/components/KdsToast";
-import { ChangePasswordModal } from "@/features/kds/settings/components/ChangePasswordModal";
-import { SettingsPanel } from "@/features/kds/settings/components/SettingsPanel";
+import { ChangePasswordModal } from "@/features/settings/components/ChangePasswordModal";
+import { SettingsPanel } from "@/features/settings/components/SettingsPanel";
 import { StaffPanel } from "@/features/kds/staff/components/StaffPanel";
 import { StatsPanel } from "@/features/kds/stats/components/StatsPanel";
 import { MyTasksPanel } from "@/features/kds/tasks/components/MyTasksPanel";
 import { ChatbotFab } from "@/features/kds/support/components/ChatbotFab";
 import { SupportPanel } from "@/features/kds/support/components/SupportPanel";
 import { useAssignedMenus } from "@/features/kds/tasks/hooks/useAssignedMenus";
-import { useKdsClock } from "@/shared/hooks/useKdsClock";
+import { useKdsClock } from "@/lib/date/use-clock";
 import { useKdsOrders } from "@/features/kds/orders/hooks/useKdsOrders";
 import { useOrderOverlays } from "@/features/kds/orders/hooks/useOrderOverlays";
-import { useKdsSettings } from "@/features/kds/settings/hooks/useKdsSettings";
-import { useStoreContext } from "@/features/kds/store-status/hooks/useStoreContext";
-import { useToast } from "@/shared/hooks/useToast";
+import { useKdsSettings } from "@/features/settings/hooks/useKdsSettings";
+import { useStoreContext } from "@/features/store-status/hooks/useStoreContext";
+
+import { notify } from "@/lib/notify";
 import { KdsShell } from "@/components/layout/KdsShell";
 import type { AuthSession } from "@/types";
 import type { BoardTab } from "@/features/kds/types";
@@ -36,7 +36,6 @@ export function KdsPage({ session, onLogout, onUnauthorized }: KdsPageProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [clearDoneConfirm, setClearDoneConfirm] = useState(false);
   const [pwModal, setPwModal] = useState(false);
-  const { hideToast, showToast, toast } = useToast();
   const now = useKdsClock();
   const {
     archiveCompletedOrders,
@@ -63,7 +62,7 @@ export function KdsPage({ session, onLogout, onUnauthorized }: KdsPageProps) {
   } = useKdsOrders({
     accessToken: session.accessToken,
     onUnauthorized,
-    showToast,
+    showToast: notify,
   });
   const {
     assignedMenus,
@@ -76,7 +75,7 @@ export function KdsPage({ session, onLogout, onUnauthorized }: KdsPageProps) {
   } = useAssignedMenus({
     accessToken: session.accessToken,
     onUnauthorized,
-    showToast,
+    showToast: notify,
   });
   const {
     loading: storeSettingsLoading,
@@ -87,7 +86,7 @@ export function KdsPage({ session, onLogout, onUnauthorized }: KdsPageProps) {
   } = useKdsSettings({
     accessToken: session.accessToken,
     onUnauthorized,
-    showToast,
+    showToast: notify,
   });
   const {
     changeStoreStatus,
@@ -101,7 +100,7 @@ export function KdsPage({ session, onLogout, onUnauthorized }: KdsPageProps) {
   } = useStoreContext({
     accessToken: session.accessToken,
     onUnauthorized,
-    showToast,
+    showToast: notify,
   });
   const {
     activeOrders,
@@ -301,10 +300,8 @@ export function KdsPage({ session, onLogout, onUnauthorized }: KdsPageProps) {
         onClose={() => setPwModal(false)}
         onLogout={onLogout}
         onUnauthorized={onUnauthorized}
-        showToast={showToast}
+        showToast={notify}
       />
-
-      <KdsToast toast={toast} onClose={hideToast} />
     </>
   );
 }

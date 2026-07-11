@@ -1,3 +1,5 @@
+import { Toaster } from "sonner";
+
 import { useAuthSession } from "@/features/auth";
 import { AuthPage } from "@/pages/auth/AuthPage";
 import { KdsPage } from "@/pages/kds/KdsPage";
@@ -31,18 +33,22 @@ export default function App() {
 
   if (registeredPending) {
     return (
-      <AuthPage
-        onLoginSuccess={handleLoginSuccess}
-        onRegisterSuccess={handleRegisterSuccess}
-        pendingInfo={{ user: registeredPending.user, store: registeredPending.store }}
-        onBackFromPending={handleBackFromPending}
-      />
+      <>
+        <Toaster position="bottom-center" richColors />
+        <AuthPage
+          onLoginSuccess={handleLoginSuccess}
+          onRegisterSuccess={handleRegisterSuccess}
+          pendingInfo={{ user: registeredPending.user, store: registeredPending.store }}
+          onBackFromPending={handleBackFromPending}
+        />
+      </>
     );
   }
 
   if (state.status === "unauthenticated") {
     return (
       <>
+        <Toaster position="bottom-center" richColors />
         {state.error ? (
           <div
             className="fixed top-4 left-4 z-20 max-w-sm rounded-md border border-destructive/20 bg-destructive/10 px-3 py-2 text-sm text-destructive"
@@ -58,21 +64,27 @@ export default function App() {
 
   if (state.status === "pending") {
     return (
-      <AuthPage
-        onLoginSuccess={handleLoginSuccess}
-        onRegisterSuccess={handleRegisterSuccess}
-        pendingInfo={{ user: state.session.user, store: state.session.store }}
-        onBackFromPending={handleBackFromPending}
-      />
+      <>
+        <Toaster position="bottom-center" richColors />
+        <AuthPage
+          onLoginSuccess={handleLoginSuccess}
+          onRegisterSuccess={handleRegisterSuccess}
+          pendingInfo={{ user: state.session.user, store: state.session.store }}
+          onBackFromPending={handleBackFromPending}
+        />
+      </>
     );
   }
 
   // status === "authenticated"
   return (
-    <KdsPage
-      onLogout={handleLogout}
-      onUnauthorized={reauthorize}
-      session={state.session}
-    />
+    <>
+      <Toaster position="bottom-center" richColors />
+      <KdsPage
+        onLogout={handleLogout}
+        onUnauthorized={reauthorize}
+        session={state.session}
+      />
+    </>
   );
 }

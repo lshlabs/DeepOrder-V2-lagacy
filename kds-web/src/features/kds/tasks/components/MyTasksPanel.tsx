@@ -6,7 +6,7 @@ import {
   normalizeAssignedMenuName,
   parseApiTimestamp,
 } from "../../orders/lib/orderFormatters";
-import { ActionMenu } from "../../../../shared/components/floating/ActionMenu";
+import { ActionMenu } from "@/components/layout/ActionMenu";
 import type { AssignedMenu, Order } from "../../../../types";
 
 type MenuModalMode = { type: "add" } | { type: "edit"; menu: AssignedMenu };
@@ -225,7 +225,7 @@ export function MyTasksPanel({
       {loading ? (
         <p className="kds-panel-empty">담당 메뉴를 불러오는 중…</p>
       ) : assignedMenus.length === 0 ? (
-        <p className="kds-panel-empty">메뉴 추가를 눌러 담당 메뉴를 등록하세요.</p>
+        <p className="kds-panel-empty">메뉴 추가를 눌러 담��� 메뉴를 등록하세요.</p>
       ) : (
         <div className="kds-mytasks-grid">
           {sortedMenus.map((menu) => {

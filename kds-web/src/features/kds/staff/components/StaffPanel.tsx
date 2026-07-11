@@ -8,7 +8,7 @@ import {
   apiUpdateStaff,
   apiUpdateStaffActive,
 } from "../../../../lib/api";
-import { ActionMenu } from "../../../../shared/components/floating/ActionMenu";
+import { ActionMenu } from "@/components/layout/ActionMenu";
 import { requestWithReauth } from "../../../../shared/lib/requestWithReauth";
 import type { AuthSession, Staff } from "../../../../types";
 

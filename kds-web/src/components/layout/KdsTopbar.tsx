@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ClockArrowDown, ClockArrowUp, Menu, RefreshCw, Trash2, X } from "lucide-react";
 
 import type { BoardTab, OrderSortDirection, StoreStatus } from "@/features/kds/types";
-import { StoreStatusControl } from "@/features/kds/store-status/components/StoreStatusControl";
+import { StoreStatusControl } from "@/features/store-status/components/StoreStatusControl";
 
 type KdsTopbarProps = {
   activeTab: BoardTab;

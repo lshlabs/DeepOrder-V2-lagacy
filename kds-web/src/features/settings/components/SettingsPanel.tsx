@@ -1,8 +1,4 @@
-import { TimePicker } from "antd";
-import dayjs, { type Dayjs } from "dayjs";
-
-import { diffMinutesWithinDay } from "../../orders/lib/orderFormatters";
-import type { SettingsState, SoundOption } from "../../types";
+import type { SettingsState, SoundOption } from "@/features/kds/types";
 
 const SOUND_OPTIONS: { value: SoundOption; label: string }[] = [
   { value: "none", label: "없음" },
@@ -18,17 +14,43 @@ type SettingsPanelProps = {
   disabled?: boolean;
 };
 
+/** "HH:mm" → { hour, minute } */
+function parseHHMM(value: string): { hour: number; minute: number } {
+  const [h = "0", m = "0"] = value.split(":");
+  return { hour: parseInt(h, 10) || 0, minute: parseInt(m, 10) || 0 };
+}
+
+/** { hour, minute } → "HH:mm" */
+function toHHMM(hour: number, minute: number): string {
+  return `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
+}
+
 export function SettingsPanel({
   settings,
   onUpdate,
   onChangePasswordClick,
   disabled = false,
 }: SettingsPanelProps) {
-  const breaktimeRangeStart = dayjs().hour(settings.breaktime.startHour).minute(settings.breaktime.startMinute).second(0);
-  const breaktimeRangeValue: [Dayjs, Dayjs] = [
-    breaktimeRangeStart,
-    breaktimeRangeStart.add(settings.breaktime.durationMinutes, "minute"),
-  ];
+  const startValue = toHHMM(settings.breaktime.startHour, settings.breaktime.startMinute);
+  const endHour = Math.floor(
+    (settings.breaktime.startHour * 60 + settings.breaktime.startMinute + settings.breaktime.durationMinutes) / 60,
+  ) % 24;
+  const endMinute =
+    (settings.breaktime.startHour * 60 + settings.breaktime.startMinute + settings.breaktime.durationMinutes) % 60;
+  const endValue = toHHMM(endHour, endMinute);
+
+  function handleStartChange(value: string) {
+    const { hour, minute } = parseHHMM(value);
+    onUpdate({ breaktime: { ...settings.breaktime, startHour: hour, startMinute: minute } });
+  }
+
+  function handleEndChange(value: string) {
+    const { hour: endH, minute: endM } = parseHHMM(value);
+    const startTotal = settings.breaktime.startHour * 60 + settings.breaktime.startMinute;
+    const endTotal = endH * 60 + endM;
+    const duration = endTotal > startTotal ? endTotal - startTotal : 1440 - startTotal + endTotal;
+    onUpdate({ breaktime: { ...settings.breaktime, durationMinutes: Math.max(5, duration) } });
+  }
 
   return (
     <section className="kds-panel kds-panel--settings" aria-label="설정">
@@ -106,34 +128,25 @@ export function SettingsPanel({
             <span className="kds-settings-row-label">브레이크타임 시간</span>
             <span className="kds-settings-row-desc">주문 접수를 중지할 시간 설정</span>
           </div>
-          <div className="kds-settings-inline-picker">
-            <TimePicker.RangePicker
-              id="bt-range"
-              allowClear={false}
-              className="kds-time-range-picker"
+          <div className="kds-settings-inline-control">
+            <label className="sr-only" htmlFor="bt-start">시작 시간</label>
+            <input
+              id="bt-start"
+              className="kds-time-input"
               disabled={disabled || !settings.breaktime.enabled}
-              format="HH:mm"
-              inputReadOnly
-              minuteStep={5}
-              needConfirm
-              placeholder={["Start time", "End time"]}
-              value={breaktimeRangeValue}
-              onChange={(value) => {
-                if (!value || !value[0] || !value[1]) {
-                  return;
-                }
-                const nextStartHour = value[0].hour();
-                const nextStartMinute = value[0].minute();
-                const nextDuration = diffMinutesWithinDay(value[0], value[1]);
-                onUpdate({
-                  breaktime: {
-                    ...settings.breaktime,
-                    startHour: nextStartHour,
-                    startMinute: nextStartMinute,
-                    durationMinutes: Math.max(5, nextDuration),
-                  },
-                });
-              }}
+              type="time"
+              value={startValue}
+              onChange={(e) => handleStartChange(e.target.value)}
+            />
+            <span className="kds-settings-row-desc" aria-hidden="true">~</span>
+            <label className="sr-only" htmlFor="bt-end">종료 시간</label>
+            <input
+              id="bt-end"
+              className="kds-time-input"
+              disabled={disabled || !settings.breaktime.enabled}
+              type="time"
+              value={endValue}
+              onChange={(e) => handleEndChange(e.target.value)}
             />
           </div>
         </div>
