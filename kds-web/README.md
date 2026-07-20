@@ -24,6 +24,70 @@ npm install
 npm run dev
 ```
 
+The dev server listens on `0.0.0.0:5173`, allowing a router, tunnel, or IDE
+port forwarder to expose it externally. The app is still available locally at
+`http://localhost:5173`.
+
+When accessing it from another device, set `VITE_DEEPORDER_API_URL` to an API
+address that is reachable from that device; `127.0.0.1` refers to the device
+running the browser.
+
+## Public access with ngrok
+
+1. Create an ngrok account and copy its auth token from the ngrok dashboard.
+2. Configure the token once on the development machine:
+
+   ```bash
+   npx ngrok config add-authtoken <YOUR_NGROK_AUTHTOKEN>
+   ```
+
+3. Run the Vite server in one terminal and the tunnel in another:
+
+   ```bash
+   npm run dev
+   # In another terminal, from kds-web
+   npm run tunnel
+   ```
+
+4. Open the reserved forwarding URL below from an external device:
+
+   ```text
+   https://twice-karma-given.ngrok-free.dev
+   ```
+
+The tunnel command exposes local port `5173`. The ngrok auth token and
+forwarding URL are intentionally not stored in this repository. Use the
+single-domain setup below for local development, or point
+`VITE_DEEPORDER_API_URL` to a separately reachable backend (such as its own
+HTTPS ngrok tunnel) and restart `npm run dev`.
+
+### KDS and backend through one ngrok domain
+
+For local development, the KDS Vite server proxies its `/api` requests to the
+local backend at `127.0.0.1:8000`. This lets one ngrok domain serve both KDS
+and API traffic without exposing a second backend tunnel.
+
+Run these three commands in separate terminals:
+
+```bash
+# Terminal 1
+cd deeporder-backend
+source .venv/bin/activate
+uvicorn app.main:app --reload --port 8000
+
+# Terminal 2
+cd kds-web
+npm run dev:ngrok
+
+# Terminal 3
+cd kds-web
+npm run tunnel
+```
+
+The tunnel must target port `5173`, not `8000`. Open
+`https://twice-karma-given.ngrok-free.dev`; browser requests to `/api` are
+proxied by Vite to the local backend.
+
 ## Environment
 
 ```bash
